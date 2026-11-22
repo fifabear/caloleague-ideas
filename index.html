@@ -1,0 +1,784 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>칼로리그 아이디어 · 레퍼런스</title>
+<meta name="description" content="칼로리그 — 5060 회원을 위한 게임화 피트니스 리그 아이디어와 레퍼런스 정리">
+<meta name="theme-color" content="#0f172a">
+<style>
+  :root{
+    --bg:#f4f6fb;
+    --bg-2:#eef2fa;
+    --card:#ffffff;
+    --ink:#12182b;
+    --ink-2:#454f66;
+    --ink-3:#6b768e;
+    --line:#e3e8f2;
+    --brand:#2f6bf6;
+    --brand-soft:#e8efff;
+    --mint:#12a594;
+    --mint-soft:#e2f7f3;
+    --amber:#c2771a;
+    --amber-soft:#fdf1de;
+    --rose:#d6436b;
+    --rose-soft:#fdeaf0;
+    --radius:18px;
+    --shadow:0 1px 2px rgba(18,24,43,.05), 0 12px 30px -18px rgba(18,24,43,.35);
+    --fs-base:16.5px;
+  }
+  html[data-size="large"]{ --fs-base:19px; }
+  html[data-size="small"]{ --fs-base:15px; }
+
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0;
+    font-family:"Pretendard","Apple SD Gothic Neo","Noto Sans KR",-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;
+    font-size:var(--fs-base);
+    line-height:1.68;
+    color:var(--ink);
+    background:
+      radial-gradient(1000px 520px at 8% -12%, #dfe8ff 0%, rgba(223,232,255,0) 62%),
+      radial-gradient(900px 480px at 96% 0%, #e2f7f3 0%, rgba(226,247,243,0) 58%),
+      var(--bg);
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--brand); text-decoration:none}
+  a:hover{text-decoration:underline}
+
+  .wrap{max-width:1120px; margin:0 auto; padding:0 18px 72px}
+
+  /* ---------- top bar ---------- */
+  .topbar{
+    position:sticky; top:0; z-index:40;
+    backdrop-filter:saturate(180%) blur(14px);
+    -webkit-backdrop-filter:saturate(180%) blur(14px);
+    background:rgba(255,255,255,.82);
+    border-bottom:1px solid var(--line);
+  }
+  .topbar-in{
+    max-width:1120px; margin:0 auto; padding:11px 18px;
+    display:flex; align-items:center; gap:12px;
+  }
+  .brand{display:flex; align-items:center; gap:9px; font-weight:800; letter-spacing:-.02em}
+  .brand .dot{
+    width:26px;height:26px;border-radius:9px;display:grid;place-items:center;
+    background:linear-gradient(145deg,#2f6bf6,#12a594); color:#fff; font-size:14px; font-weight:900;
+  }
+  .brand small{display:block;font-weight:600;color:var(--ink-3);font-size:12px;letter-spacing:0}
+  .spacer{flex:1}
+  .sizectl{display:flex;align-items:center;gap:6px;color:var(--ink-3);font-size:12.5px}
+  .sizectl .seg{
+    display:flex;background:var(--bg-2);border:1px solid var(--line);border-radius:999px;padding:3px;
+  }
+  .sizectl button{
+    border:0;background:transparent;color:var(--ink-2);font:inherit;font-size:12.5px;
+    padding:4px 11px;border-radius:999px;cursor:pointer;font-weight:700;
+  }
+  .sizectl button[aria-pressed="true"]{background:#fff;color:var(--brand);box-shadow:0 1px 3px rgba(18,24,43,.18)}
+
+  /* ---------- hero ---------- */
+  .hero{padding:38px 0 6px}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:8px;
+    background:var(--brand-soft);color:#1f4fd0;font-weight:800;font-size:12.5px;
+    padding:6px 12px;border-radius:999px;letter-spacing:.01em;
+  }
+  .hero h1{
+    font-size:clamp(28px,4.6vw,44px); line-height:1.2; letter-spacing:-.03em;
+    margin:16px 0 10px; font-weight:850;
+  }
+  .hero h1 span{
+    background:linear-gradient(120deg,#2f6bf6,#12a594);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .hero p.lead{font-size:calc(var(--fs-base) * 1.08); color:var(--ink-2); margin:0 0 20px; max-width:64ch}
+  .chips{display:flex;flex-wrap:wrap;gap:9px;margin:0 0 8px;padding:0;list-style:none}
+  .chips li{
+    background:#fff;border:1px solid var(--line);border-radius:999px;
+    padding:9px 15px;font-weight:750;font-size:.94em;box-shadow:var(--shadow);
+    display:flex;align-items:center;gap:7px;
+  }
+  .chips li i{font-style:normal}
+
+  /* ---------- tabs ---------- */
+  .tabs{
+    display:flex;gap:8px;overflow-x:auto;padding:22px 2px 4px;margin:0 -2px;
+    scrollbar-width:none;-webkit-overflow-scrolling:touch;
+  }
+  .tabs::-webkit-scrollbar{display:none}
+  .tab{
+    flex:0 0 auto;border:1px solid var(--line);background:#fff;color:var(--ink-2);
+    font:inherit;font-size:.9em;font-weight:750;padding:9px 15px;border-radius:999px;
+    cursor:pointer;white-space:nowrap;transition:.16s;
+  }
+  .tab:hover{border-color:#c9d6ef;color:var(--ink)}
+  .tab[aria-selected="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
+
+  /* ---------- sections ---------- */
+  section.card{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:26px 26px 8px;margin:16px 0;box-shadow:var(--shadow);scroll-margin-top:78px;
+  }
+  .sec-head{display:flex;align-items:flex-start;gap:14px;margin-bottom:6px}
+  .num{
+    flex:0 0 auto;width:38px;height:38px;border-radius:12px;display:grid;place-items:center;
+    background:var(--brand-soft);color:#1f4fd0;font-weight:850;font-size:16px;
+  }
+  .sec-head h2{margin:0;font-size:1.32em;letter-spacing:-.02em;line-height:1.35;font-weight:820}
+  .sec-head .sub{margin:3px 0 0;color:var(--ink-3);font-size:.86em;font-weight:600}
+  .card h3{font-size:1.02em;margin:22px 0 8px;letter-spacing:-.01em}
+  .card p{margin:0 0 14px;color:var(--ink-2)}
+  ul.clean{margin:0 0 16px;padding:0;list-style:none}
+  ul.clean li{
+    position:relative;padding-left:22px;margin:0 0 9px;color:var(--ink-2);
+  }
+  ul.clean li::before{
+    content:"";position:absolute;left:4px;top:.66em;width:7px;height:7px;border-radius:50%;
+    background:#b9c6e4;
+  }
+  ul.clean li b, .card p b{color:var(--ink);font-weight:780}
+
+  .callout{
+    border-radius:14px;padding:15px 17px;margin:0 0 18px;font-size:.95em;
+    background:var(--mint-soft);border:1px solid #c6ece5;color:#0d5f57;
+  }
+  .callout .t{display:block;font-weight:850;margin-bottom:4px;color:#0b4f49}
+  .callout.warn{background:var(--amber-soft);border-color:#f3ddb6;color:#7a4a09}
+  .callout.warn .t{color:#6b4008}
+  .callout.info{background:var(--brand-soft);border-color:#cfdcff;color:#1c3f9e}
+  .callout.info .t{color:#173c96}
+
+  table{width:100%;border-collapse:separate;border-spacing:0;margin:4px 0 20px;font-size:.93em}
+  th,td{text-align:left;padding:11px 13px;border-bottom:1px solid var(--line);vertical-align:top}
+  thead th{
+    background:var(--bg-2);color:var(--ink-2);font-weight:800;font-size:.9em;
+    border-bottom:1px solid var(--line);
+  }
+  thead th:first-child{border-top-left-radius:10px}
+  thead th:last-child{border-top-right-radius:10px}
+  tbody tr:last-child td{border-bottom:0}
+  td b{font-weight:780}
+  code{
+    background:var(--bg-2);border:1px solid var(--line);border-radius:6px;
+    padding:1px 6px;font-size:.88em;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
+  }
+
+  .pillrow{display:flex;flex-wrap:wrap;gap:7px;margin:0 0 16px}
+  .pill{
+    font-size:.82em;font-weight:750;padding:5px 11px;border-radius:999px;
+    background:var(--bg-2);color:var(--ink-2);border:1px solid var(--line);
+  }
+  .pill.b{background:var(--brand-soft);color:#1f4fd0;border-color:#d3e0ff}
+  .pill.m{background:var(--mint-soft);color:#0d6f66;border-color:#c6ece5}
+  .pill.a{background:var(--amber-soft);color:#8a5510;border-color:#f3ddb6}
+  .pill.r{background:var(--rose-soft);color:#a72f52;border-color:#f8d4df}
+
+  /* tv dashboard mock */
+  .mock{
+    display:grid;grid-template-columns:1.15fr .85fr .6fr;gap:10px;
+    background:#0d1424;border-radius:14px;padding:11px;margin:0 0 20px;color:#e8eefc;
+    font-size:.86em;border:1px solid #0b1120;
+  }
+  .mock .mb{
+    background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.1);
+    border-radius:10px;padding:11px 12px;min-height:96px;
+  }
+  .mock .mb .k{font-size:.72em;letter-spacing:.09em;font-weight:800;color:#8fa8d8;display:block;margin-bottom:6px}
+  .mock .mb .v{font-weight:800;font-size:1.05em;letter-spacing:-.01em}
+  .mock .mb .s{color:#9fb2d6;font-size:.85em;display:block;margin-top:4px;line-height:1.45}
+  .mock .bar{
+    grid-column:1/-1;display:flex;justify-content:space-between;align-items:center;
+    font-size:.8em;color:#9fb2d6;padding:2px 3px 0;border-top:1px solid rgba(255,255,255,.08);margin-top:2px
+  }
+
+  /* gallery */
+  .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(255px,1fr));gap:14px;margin:6px 0 22px}
+  .shot{
+    border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff;
+    display:flex;flex-direction:column;box-shadow:0 1px 2px rgba(18,24,43,.05);
+    transition:transform .18s, box-shadow .18s;
+  }
+  .shot:hover{transform:translateY(-2px);box-shadow:0 14px 26px -18px rgba(18,24,43,.5)}
+  .shot button.pic{
+    display:block;padding:0;border:0;background:#0d1424;cursor:zoom-in;line-height:0;width:100%;
+  }
+  .shot img{width:100%;height:196px;object-fit:cover;display:block}
+  .shot .cap{padding:12px 14px 14px}
+  .shot .cap .n{
+    font-size:.72em;font-weight:850;color:var(--brand);letter-spacing:.04em;
+  }
+  .shot .cap b{display:block;font-size:.95em;margin:3px 0 3px;letter-spacing:-.01em}
+  .shot .cap span{color:var(--ink-3);font-size:.84em;line-height:1.5}
+
+  /* top5 list */
+  .top5{display:grid;gap:12px;margin:4px 0 20px}
+  .top5 .item{
+    display:grid;grid-template-columns:34px 1fr;gap:13px;
+    border:1px solid var(--line);border-radius:14px;padding:14px 16px;background:#fcfdff;
+  }
+  .top5 .item .r{
+    width:34px;height:34px;border-radius:11px;display:grid;place-items:center;
+    background:linear-gradient(145deg,#2f6bf6,#12a594);color:#fff;font-weight:850;font-size:.92em;
+  }
+  .top5 .item b{display:block;letter-spacing:-.01em;margin-bottom:2px}
+  .top5 .item span{color:var(--ink-2);font-size:.92em}
+  .top5 .item .src{display:block;margin-top:6px;color:var(--ink-3);font-size:.82em;font-weight:700}
+
+  /* lightbox */
+  .lb{
+    position:fixed;inset:0;z-index:90;display:none;place-items:center;
+    background:rgba(9,13,24,.9);padding:18px;
+  }
+  .lb[open]{display:grid}
+  .lb img{max-width:100%;max-height:86vh;border-radius:10px;box-shadow:0 30px 80px rgba(0,0,0,.55)}
+  .lb .close{
+    position:absolute;top:16px;right:16px;background:rgba(255,255,255,.14);color:#fff;
+    border:1px solid rgba(255,255,255,.28);border-radius:999px;padding:8px 15px;font:inherit;
+    font-size:.9em;font-weight:750;cursor:pointer;backdrop-filter:blur(6px);
+  }
+  .lb .nav{
+    position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.14);
+    color:#fff;border:1px solid rgba(255,255,255,.28);border-radius:999px;width:46px;height:46px;
+    font-size:20px;cursor:pointer;display:grid;place-items:center;
+  }
+  .lb .nav.prev{left:14px}
+  .lb .nav.next{right:14px}
+  .lb .cap{
+    position:absolute;bottom:18px;left:0;right:0;text-align:center;color:#dbe4f7;font-size:.9em;padding:0 24px;
+  }
+
+  footer{
+    margin-top:30px;padding-top:22px;border-top:1px solid var(--line);
+    color:var(--ink-3);font-size:.84em;display:flex;flex-wrap:wrap;gap:8px 18px;align-items:center;
+  }
+  footer .srcs{display:flex;flex-wrap:wrap;gap:6px 16px}
+  .srcline{display:block;margin:16px 0 22px;font-size:.9em;color:var(--ink-3)}
+  .srcline a{font-weight:700}
+
+  @media (max-width:720px){
+    .wrap{padding:0 14px 56px}
+    section.card{padding:20px 17px 6px; border-radius:16px}
+    .hero{padding:26px 0 2px}
+    .mock{grid-template-columns:1fr}
+    .shot img{height:180px}
+    table{display:block;overflow-x:auto;white-space:nowrap}
+    thead th, td{white-space:normal}
+    table{white-space:normal}
+    .gallery{grid-template-columns:1fr 1fr}
+    .shot img{height:132px}
+    .shot .cap{padding:10px 11px 12px}
+    .shot .cap span{display:none}
+  }
+  @media (max-width:430px){
+    .gallery{grid-template-columns:1fr}
+    .shot img{height:200px}
+    .shot .cap span{display:block}
+  }
+  @media print{
+    body{background:#fff}
+    .topbar,.tabs,.lb{display:none!important}
+    section.card{break-inside:avoid;box-shadow:none}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-in">
+    <div class="brand">
+      <span class="dot">C</span>
+      <span>칼로리그<small>아이디어 · 레퍼런스 노트</small></span>
+    </div>
+    <span class="spacer"></span>
+    <div class="sizectl">
+      <span>글씨</span>
+      <div class="seg" role="group" aria-label="글자 크기">
+        <button type="button" data-size="small">작게</button>
+        <button type="button" data-size="base" aria-pressed="true">기본</button>
+        <button type="button" data-size="large">크게</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <header class="hero" id="top">
+    <span class="eyebrow">🍀 5060 회원을 위한 게임화 피트니스 리그</span>
+    <h1>칼로리그 <span>아이디어 7가지</span></h1>
+    <p class="lead">
+      큰 글씨 기본 화면 + 매장 TV 현황판 + 실시간 점수·랭크 게임화 + “절대 기록 대신 목표 근접도”.
+      이 네 가지가 5060 회원을 위한 칼로리그의 차별점입니다. 아래 카드에서 항목별로 확인하세요.
+    </p>
+    <ul class="chips">
+      <li><i>🔠</i>큰 글씨가 기본</li>
+      <li><i>📺</i>매장 TV 현황판</li>
+      <li><i>🏅</i>실시간 점수 · 랭크</li>
+      <li><i>🎯</i>목표 근접도 점수</li>
+      <li><i>📷</i>현장 사진 9장</li>
+    </ul>
+  </header>
+
+  <nav class="tabs" role="tablist" aria-label="아이디어 목차">
+    <button class="tab" type="button" role="tab" data-target="ui" aria-selected="false">① 5060 UI</button>
+    <button class="tab" type="button" role="tab" data-target="kiosk" aria-selected="false">② TV 전광판</button>
+    <button class="tab" type="button" role="tab" data-target="board" aria-selected="false">③ 매장 현황판</button>
+    <button class="tab" type="button" role="tab" data-target="gamify" aria-selected="false">④ 게임화</button>
+    <button class="tab" type="button" role="tab" data-target="global" aria-selected="false">⑤ 해외 12곳</button>
+    <button class="tab" type="button" role="tab" data-target="token" aria-selected="false">⑥ 응원 토큰</button>
+    <button class="tab" type="button" role="tab" data-target="league" aria-selected="false">⑦ 레벨 리그</button>
+    <button class="tab" type="button" role="tab" data-target="shots" aria-selected="false">📷 현장 사진</button>
+  </nav>
+
+  <main id="sections">
+
+    <!-- 1 -->
+    <section class="card" id="ui" data-tab>
+      <div class="sec-head">
+        <span class="num">1</span>
+        <div>
+          <h2>5060 UI 기준 — 큰 글씨가 기본</h2>
+          <p class="sub">참고: 지역화폐 앱 <b>chak</b>의 큰 글씨 전환 방식</p>
+        </div>
+      </div>
+
+      <div class="callout info">
+        <span class="t">핵심</span>
+        큰 글씨를 <b>옵션이 아니라 기본값</b>으로. 앱을 처음 켠 화면부터 큰 글씨라서, 5060 회원이 설정을 찾아 들어갈 필요가 없습니다.
+      </div>
+
+      <ul class="clean">
+        <li><b>큰 글씨 = 기본 / 작은 글씨 = 옵션</b> — 설정에서 한 번만 바꾸면 됨</li>
+        <li>기존 합의 유지: <b>하단 대메뉴 5~6개</b> · 밝고 친근한 톤</li>
+        <li>로그인은 <b>전화번호 + 이름 + 숫자 6자리</b> (비밀번호 없이)</li>
+        <li>이 페이지도 오른쪽 위 <b>글씨 크기</b> 버튼으로 같은 방식을 미리 체험할 수 있게 해 두었습니다</li>
+      </ul>
+
+      <p class="srcline">참고 앱: chak(지역화폐 앱) — 메인 화면에서 큰 글씨 버전으로 전환하는 구조</p>
+    </section>
+
+    <!-- 2 -->
+    <section class="card" id="kiosk" data-tab>
+      <div class="sec-head">
+        <span class="num">2</span>
+        <div>
+          <h2>구글 TV 전광판 — Fully Kiosk Browser / Fully Cloud</h2>
+          <p class="sub">앱 개발 없이 범용 TV 1대로 매장 현황판을 띄우는 방법</p>
+        </div>
+      </div>
+
+      <div class="callout">
+        <span class="t">이렇게 됩니다</span>
+        구글 TV(안드로이드 TV)에 <b>Fully Kiosk Browser</b>를 설치하면, 칼로리그 웹 현황판을 앱처럼 전체 화면으로 고정해 띄울 수 있습니다.
+      </div>
+
+      <ul class="clean">
+        <li><b>부팅 시 자동 실행</b> — TV 전원만 켜면 현황판이 바로 뜸</li>
+        <li><b>화면 꺼짐·절전 방지</b> — 매장 운영 내내 켜 둘 수 있음</li>
+        <li><b>지정한 URL만 표시</b> — 다른 페이지로 새지 않음</li>
+        <li><b>Fully Cloud</b>로 원격 관리 — URL 변경·재시작·표시 스케줄을 매장에 가지 않고 처리</li>
+        <li>별도 키오스크 장비가 필요 없어 <b>초기 비용·유지보수 부담이 적음</b></li>
+      </ul>
+
+      <table>
+        <thead><tr><th>하는 일</th><th>수단</th></tr></thead>
+        <tbody>
+          <tr><td>TV에 현황판 전체화면 고정</td><td>Fully Kiosk Browser</td></tr>
+          <tr><td>부팅 자동 실행 · 절전 방지</td><td>Fully Kiosk Browser 설정</td></tr>
+          <tr><td>원격 URL 변경 · 재시작</td><td>Fully Cloud</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- 3 -->
+    <section class="card" id="board" data-tab>
+      <div class="sec-head">
+        <span class="num">3</span>
+        <div>
+          <h2>매장 TV 실시간 현황판 — 인피에잇(InFi8) 3단 구성</h2>
+          <p class="sub">운동 전에는 오늘 뭘 하는지, 운동 후에는 내 순위가 어디인지가 한 화면에서 끝</p>
+        </div>
+      </div>
+
+      <div class="mock" aria-hidden="true">
+        <div class="mb">
+          <span class="k">WOD</span>
+          <span class="v">오늘의 운동</span>
+          <span class="s">MON 23 NOV · ALL CLASSES</span>
+        </div>
+        <div class="mb">
+          <span class="k">LEADERBOARD</span>
+          <span class="v">리더보드</span>
+          <span class="s">나이도 · 성별 순위 / 참여 인원</span>
+        </div>
+        <div class="mb">
+          <span class="k">NEXT CLASS</span>
+          <span class="v">06:30</span>
+          <span class="s">신청 0/1 · 예약자</span>
+        </div>
+        <div class="bar"><span>InFi8 · HYROX TRAINING CLUB</span><span>SAT · 21 NOV 2026</span></div>
+      </div>
+
+      <table>
+        <thead><tr><th>위치</th><th>화면</th><th>역할</th></tr></thead>
+        <tbody>
+          <tr><td>상단 바</td><td>로고 · 오늘 WOD 날짜 · 실시간 시계</td><td>언제, 무슨 운동인지</td></tr>
+          <tr><td>왼쪽</td><td>오늘의 WOD · 수업 안내</td><td>운동 전 확인</td></tr>
+          <tr><td>가운데</td><td>리더보드 — 참여 인원·순위</td><td>운동 후 성취·재방문 동기</td></tr>
+          <tr><td>오른쪽</td><td>다음 타임 — 시간·신청 인원</td><td>예약·출석 유도</td></tr>
+        </tbody>
+      </table>
+
+      <ul class="clean">
+        <li>리더보드는 <b>나이·성별 기준 순위</b> → 5060 회원도 또래 안에서 순위를 받음</li>
+        <li>기록 입력은 <b>앱</b>에서, TV는 <b>보여주기만</b> → 화면·앱·결제가 한 줄로 연결</li>
+        <li>카운터 1대 + 운동 공간 1대, 같은 화면을 두 곳에 (설치 위치·전원은 미리 확보)</li>
+      </ul>
+
+      <h3>현장 사진 — TV 현황판과 천장 TV</h3>
+      <div class="gallery">
+        <figure class="shot">
+          <button class="pic" type="button" data-full="https://lh3.googleusercontent.com/d/10eNHNJrnqg6--UFEgNPcAEwYuuicGbME=w1600" data-cap="사진 1 · 카운터 위 대형 TV (IMG_8947)">
+            <img src="https://lh3.googleusercontent.com/d/10eNHNJrnqg6--UFEgNPcAEwYuuicGbME=w1200" alt="인피에잇 TV 실시간 현황판 — 오늘의 WOD · 리더보드 · 다음 수업" loading="lazy">
+          </button>
+          <figcaption class="cap"><span class="n">사진 1 · IMG_8947</span><b>TV 실시간 현황판</b><span>3단 카드가 한 화면에 나뉘어 있다. 상단 바 · 왼쪽 WOD · 가운데 리더보드 · 오른쪽 다음 타임.</span></figcaption>
+        </figure>
+        <figure class="shot">
+          <button class="pic" type="button" data-full="https://lh3.googleusercontent.com/d/1ODlfUbTyT0kbKWXFjYnXRLlLjraPoIvr=w1600" data-cap="사진 2 · 천장 TV와 장비 (IMG_8948)">
+            <img src="https://lh3.googleusercontent.com/d/1ODlfUbTyT0kbKWXFjYnXRLlLjraPoIvr=w1200" alt="천장에 매단 TV와 로잉머신, 글라스 파티션" loading="lazy">
+          </button>
+          <figcaption class="cap"><span class="n">사진 2 · IMG_8948</span><b>천장 브라켓 TV</b><span>글라스 파티션 상단에 TV를 매달아 운동 공간에서도 같은 화면이 보이게 했다. 아래에는 로잉머신(ROWERG).</span></figcaption>
+        </figure>
+      </div>
+      <p class="srcline">사진 9장 전체는 <a href="#shots" data-jump="shots">📷 현장 사진</a> 탭에서 크게 볼 수 있습니다.</p>
+    </section>
+
+    <!-- 4 -->
+    <section class="card" id="gamify" data-tab>
+      <div class="sec-head">
+        <span class="num">4</span>
+        <div>
+          <h2>인터랙티브 게임화 — Entrance(@entrance_xp) 참고</h2>
+          <p class="sub">멕시코시티의 인터랙티브 피트니스 아레나</p>
+        </div>
+      </div>
+
+      <ul class="clean">
+        <li>50분 그룹 서킷 중 <b>실시간 점수·심박 존</b>이 화면에 바로 표시</li>
+        <li><b>Rookie → 상위 티어 랭크 승급</b> 구조 → 다음 목표가 눈에 보임</li>
+        <li>저강도 장시간 서킷 <b>Burn</b> 별도 운영 → 40~50대 진입장벽을 낮춤</li>
+        <li>회원 후기: “게임 같아서 힘든 줄 모르고 시간 가는 줄 몰랐다”</li>
+      </ul>
+
+      <div class="callout">
+        <span class="t">우리에게 옮길 것</span>
+        센서 설비 없이도 <b>① 실시간 점수판 ② 랭크 승급 ③ 저강도 장시간 트랙</b> 세 가지 구조는 그대로 차용할 수 있습니다.
+      </div>
+
+      <div class="pillrow">
+        <span class="pill b">실시간 점수판</span>
+        <span class="pill m">랭크 승급</span>
+        <span class="pill a">저강도 트랙(Burn)</span>
+      </div>
+
+      <p class="srcline">참고: <a href="https://www.entrancexp.com/" target="_blank" rel="noopener">entrancexp.com</a> · Instagram <a href="https://www.instagram.com/entrance_xp/" target="_blank" rel="noopener">@entrance_xp</a></p>
+    </section>
+
+    <!-- 5 -->
+    <section class="card" id="global" data-tab>
+      <div class="sec-head">
+        <span class="num">5</span>
+        <div>
+          <h2>해외 게임화 · 시니어 피트니스 12곳 — 바로 쓸 Top 5</h2>
+          <p class="sub">12곳을 조사해 그중 지금 바로 적용할 수 있는 5가지</p>
+        </div>
+      </div>
+
+      <div class="top5">
+        <div class="item">
+          <span class="r">1</span>
+          <div>
+            <b>CP를 ‘절대 칼로리’ → ‘목표 근접도 + 상한 캡’으로</b>
+            <span>목표 90~110% 달성 시 보너스, 초과분은 캡. 50대와 60대를 같은 기준으로 공정하게.</span>
+            <span class="src">참고 F45 · Myzone</span>
+          </div>
+        </div>
+        <div class="item">
+          <span class="r">2</span>
+          <div>
+            <b>시즌·월별 ‘연속 개월 랭크’를 TV에 상시 게시</b>
+            <span>1·3·6·12개월 단계 랭크, 만료 전 갱신하면 유지.</span>
+            <span class="src">참고 Myzone Status</span>
+          </div>
+        </div>
+        <div class="item">
+          <span class="r">3</span>
+          <div>
+            <b>입회·6주·12주 ‘몸 나이’ 평가 루프</b>
+            <span>벌점 없음, 결과지 1장으로 건강관리 동기 부여.</span>
+            <span class="src">참고 EGYM · Club Active · Gym Tonic</span>
+          </div>
+        </div>
+        <div class="item">
+          <span class="r">4</span>
+          <div>
+            <b>리더보드 3분할 + 월간 리셋, 비교군 선택권</b>
+            <span>CP·출석·목표달성률로 나눠 50명 전원이 어딘가에 이름을 올림.</span>
+            <span class="src">참고 F45 Trials · EGYM</span>
+          </div>
+        </div>
+        <div class="item">
+          <span class="r">5</span>
+          <div>
+            <b>동반·추천은 ‘쿠폰’이 아닌 ‘상시 권리’로</b>
+            <span>시즌권에 월 2회 동반권 내장, 추천 보상은 기간 연장.</span>
+            <span class="src">참고 Planet Fitness · Orangetheory</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout info">
+        <span class="t">운영 포인트</span>
+        <b>평가 → 처방 → 재측정</b> 루프는 비싼 장비 없이 수기 입력 기반으로도 운영할 수 있습니다.
+      </div>
+
+      <p class="srcline">12곳 전체 상세 리포트 — <a href="https://muse.ai/s/haeoe-geimhwa-sinieo-piteuniseu-sarye-xgxk6xrexoxvf90xe/mBriNqJrU9vHRO47wRDsZzMiaJwl7d4ZtVzV4hbL1IA" target="_blank" rel="noopener">뮤즈 글로벌 리서치 정리본 보기</a></p>
+    </section>
+
+    <!-- 6 -->
+    <section class="card" id="token" data-tab>
+      <div class="sec-head">
+        <span class="num">6</span>
+        <div>
+          <h2>보조 아이템(응원 토큰) &amp; 팀 응원 댓글</h2>
+          <p class="sub">메인 점수(CP)와 별도로, 가볍게 모으는 두 번째 점수</p>
+        </div>
+      </div>
+
+      <ul class="clean">
+        <li>메인 점수(CP)와 별도로 <b>보조 아이템</b>(예: 응원 토큰)을 둠</li>
+        <li><b>하루 1회 접속 + 팀 응원 댓글</b> = 데일리 미션 (접속만 해도 점수)</li>
+        <li><b>주말(금·토·일) 보너스 +1</b> → 주말 참여 유도</li>
+        <li>모인 보조 아이템은 <b>월말 뽑기권 추가 응모 / 팀 응원 부스트</b>로 사용</li>
+      </ul>
+
+      <table>
+        <thead><tr><th>행동</th><th>보상</th><th>목적</th></tr></thead>
+        <tbody>
+          <tr><td>하루 1회 접속</td><td>응원 토큰</td><td>매일 앱을 여는 습관</td></tr>
+          <tr><td>팀 응원 댓글</td><td>응원 토큰</td><td>팀 안에서 서로를 아는 관계</td></tr>
+          <tr><td>주말 참여</td><td>보너스 +1</td><td>주말 이탈 방지</td></tr>
+          <tr><td>월말 사용</td><td>뽑기권 응모 · 팀 부스트</td><td>모은 것을 쓸 이유</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- 7 -->
+    <section class="card" id="league" data-tab>
+      <div class="sec-head">
+        <span class="num">7</span>
+        <div>
+          <h2>식단 앱 밀리그램(Mealligram) 레벨 리그 참고</h2>
+          <p class="sub">시즌이 아니라 주 단위로 리셋되는 가벼운 경쟁</p>
+        </div>
+      </div>
+
+      <ul class="clean">
+        <li><b>매주 점수 기반 레벨 리그</b> — 주 단위로 리셋되어 부담이 적음</li>
+        <li><b>데일리 퀘스트</b>로 매일 할 일을 제시</li>
+        <li>“그룹 내 오늘 몇 번째 완료” 같은 <b>가벼운 완료 피드백</b></li>
+      </ul>
+
+      <div class="callout warn">
+        <span class="t">우리 차별점</span>
+        온라인 개인 식단 중심인 밀리그램과 달리, 칼로리그는 <b>오프라인 측정(인바디·로잉·출석) + 5060 친화 + 팀전·뽑기</b>로 갑니다.
+      </div>
+
+      <div class="pillrow">
+        <span class="pill">주 단위 리그</span>
+        <span class="pill">데일리 퀘스트</span>
+        <span class="pill">완료 피드백</span>
+        <span class="pill b">오프라인 측정</span>
+        <span class="pill m">팀전 · 뽑기</span>
+      </div>
+    </section>
+
+    <!-- gallery -->
+    <section class="card" id="shots" data-tab>
+      <div class="sec-head">
+        <span class="num">📷</span>
+        <div>
+          <h2>인피에잇(InFi8) 현장 사진 9장</h2>
+          <p class="sub">TV 현황판 · 천장 TV · 장비 배치 · 카운터 안내 화면 · 벽면 홍보물 · 입구 배너 — 사진을 누르면 크게 볼 수 있습니다</p>
+        </div>
+      </div>
+
+      <div class="gallery">
+        <figure class="shot">
+          <button class="pic" type="button" data-full="https://lh3.googleusercontent.com/d/10eNHNJrnqg6--UFEgNPcAEwYuuicGbME=w1600" data-cap="사진 1 · 카운터 위 대형 TV (IMG_8947)">
+            <img src="https://lh3.googleusercontent.com/d/10eNHNJrnqg6--UFEgNPcAEwYuuicGbME=w1200" alt="인피에잇 TV 실시간 현황판" loading="lazy">
+          </button>
+          <figcaption class="cap"><span class="n">사진 1 · IMG_8947</span><b>TV 실시간 현황판</b><span>오늘의 WOD · 리더보드 · 다음 수업 3단 구성.</span></figcaption>
+        </figure>
+
+        <figure class="shot">
+          <button class="pic" type="button" data-full="https://lh3.googleusercontent.com/d/1ODlfUbTyT0kbKWXFjYnXRLlLjraPoIvr=w1600" data-cap="사진 2 · 천장 TV와 장비 (IMG_8948)">
+            <img src="https://lh3.googleusercontent.com/d/1ODlfUbTyT0kbKWXFjYnXRLlLjraPoIvr=w1200" alt="천장에 매단 TV와 로잉머신" loading="lazy">
+          </button>
+          <figcaption class="cap"><span class="n">사진 2 · IMG_8948</span><b>천장 브라켓 TV · 로잉머신</b><span>같은 화면을 운동 공간 안에서도.</span></figcaption>
+        </figure>
+
+        <figure class="shot">
+          <button class="pic" type="button" data-full="https://lh3.googleusercontent.com/d/1Fi1epJeMULzKJF2fCyBPzqz9WGnlOvAx=w1600" data-cap="사진 3 · S-Drive 배치 (IMG_8949)">
+            <img src="https://lh3.googleusercontent.com/d/1Fi1epJeMULzKJF2fCyBPzqz9WGnlOvAx=w1200" alt="S-Drive 3대를 유리창 쪽으로 나란히 배치" loading="lazy">
+          </button>
+          <figcaption class="cap"><span class="n">사진 3 · IMG_8949</span><b>S-Drive 배치</b><span>창가 3대 나란히 + 코스 영상 화면.</span></figcaption>
+        </figure>
+
+        <figure class="shot">
+          <button class="pic" type="button" data-full="https://lh3.googleusercontent.com/d/1tWDYbH4H6zx2qV99QrTAZfn01gyhc7SW=w1600" data-cap="사진 4 · 벽면 포스터 3종 (IMG_8950)">
+            <img src="https://lh3.googleusercontent.com/d/1tWDYbH4H6zx2qV99QrTAZfn01gyhc7SW=w1200" alt="벽면 포스터 — ENUF 할인 · 리뷰/추천 연장 · 가제트" loading="lazy">
+          </button>
+          <figcaption class="cap"><span class="n">사진 4 · IMG_8950</span><b>벽면 포스터 3종</b><span>의류 할인 · 리뷰/추천 회원권 연장 · 월별 루틴.</span></figcaption>
+        </figure>
+
+        <figure class="shot">
+          <button class="pic" type="button" data-full="https://lh3.googleusercontent.com/d/1MLtzFKE82X8RzKUpOP6UHsa7XfJIrhL8=w1600" data-cap="사진 5 · 하이록스 꿀팁 + 무게/거리표 (IMG_8951)">
+            <img src="https://lh3.googleusercontent.com/d/1MLtzFKE82X8RzKUpOP6UHsa7XfJIrhL8=w1200" alt="하이록스 꿀팁 포스터와 스테이션 무게·거리 기준표" loading="lazy">
+          </button>
+          <figcaption class="cap"><span class="n">사진 5 · IMG_8951</span><b>꿀팁 포스터 + 기준표</b><span>종목·무게·거리를 벽에 공개 = 초보자 안심.</span></figcaption>
+        </figure>
+
+        <figure class="shot">
+          <button class="pic" type="button" data-full="https://lh3.googleusercontent.com/d/17I000Q_nrInCA4YKSKRiNHQhRmhumaMr=w1600" data-cap="사진 6 · 토스 단말기 2대 — 출석 이벤트(좌) · 가격표(우) (IMG_8952)">
+            <img src="https://lh3.googleusercontent.com/d/17I000Q_nrInCA4YKSKRiNHQhRmhumaMr=w1200" alt="토스 단말기 2대 — 출석 이벤트와 가격표" loading="lazy">
+          </button>
+          <figcaption class="cap"><span class="n">사진 6 · IMG_8952</span><b>카운터 화면 2대</b><span>왼쪽 출석 이벤트, 오른쪽 가격표.</span></figcaption>
+        </figure>
+
+        <figure class="shot">
+          <button class="pic" type="button" data-full="https://lh3.googleusercontent.com/d/1ZHe3xChvBe-RN9uwMMk_1KU0VoNjUWUt=w1600" data-cap="사진 7 · 요일별 프로그램 + 가격표 (IMG_8954)">
+            <img src="https://lh3.googleusercontent.com/d/1ZHe3xChvBe-RN9uwMMk_1KU0VoNjUWUt=w1200" alt="토스 단말기 — 요일별 프로그램과 가격표" loading="lazy">
+          </button>
+          <figcaption class="cap"><span class="n">사진 7 · IMG_8954</span><b>요일별 프로그램</b><span>MON WAKE ~ SAT REVEAL, 요일 이름이 곧 목적.</span></figcaption>
+        </figure>
+
+        <figure class="shot">
+          <button class="pic" type="button" data-full="https://lh3.googleusercontent.com/d/191d3fpBPBMwNRqtyubMBqYI_mEzchg93=w1600" data-cap="사진 8 · 카운터 화면 근접 (IMG_8953)">
+            <img src="https://lh3.googleusercontent.com/d/191d3fpBPBMwNRqtyubMBqYI_mEzchg93=w1200" alt="토스 단말기 출석 이벤트·가격표 근접" loading="lazy">
+          </button>
+          <figcaption class="cap"><span class="n">사진 8 · IMG_8953</span><b>같은 화면 근접</b><span>상담할 때 화면만 돌려 보여주면 설명이 끝.</span></figcaption>
+        </figure>
+
+        <figure class="shot">
+          <button class="pic" type="button" data-full="https://lh3.googleusercontent.com/d/1ti2PxBy6NjogTlhs_8VMW9AfU-gsOIPm=w1600" data-cap="사진 9 · 입구 배너 (IMG_8955)">
+            <img src="https://lh3.googleusercontent.com/d/1ti2PxBy6NjogTlhs_8VMW9AfU-gsOIPm=w1200" alt="입구 배너 — 러닝 마일리지 챌린지와 무료체험 3일" loading="lazy">
+          </button>
+          <figcaption class="cap"><span class="n">사진 9 · IMG_8955</span><b>입구 배너</b><span>3초 안에 읽히는 구조: 가치 5개 + 무료체험 + 전화.</span></figcaption>
+        </figure>
+      </div>
+
+      <div class="callout">
+        <span class="t">배너에서 배울 것</span>
+        헤드라인 한 줄 → 가치 5개 → <b>무료체험 3일 + 전화번호 크게 + QR</b>. 숫자와 전화번호가 가장 크게 보이도록 배치되어, 지나가며 3초 안에 읽힙니다.
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="srcs">
+      <a href="#top">맨 위로 ↑</a>
+      <a href="https://www.entrancexp.com/" target="_blank" rel="noopener">Entrance</a>
+      <a href="https://muse.ai/s/haeoe-geimhwa-sinieo-piteuniseu-sarye-xgxk6xrexoxvf90xe/mBriNqJrU9vHRO47wRDsZzMiaJwl7d4ZtVzV4hbL1IA" target="_blank" rel="noopener">해외 12곳 리포트</a>
+    </div>
+    <span class="spacer"></span>
+    <span>칼로리그 아이디어 · 레퍼런스 · 2026-11-22 정리</span>
+  </footer>
+</div>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="사진 크게 보기">
+  <button class="close" type="button" id="lbClose">닫기 ✕</button>
+  <button class="nav prev" type="button" id="lbPrev" aria-label="이전 사진">‹</button>
+  <img id="lbImg" alt="" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+  <button class="nav next" type="button" id="lbNext" aria-label="다음 사진">›</button>
+  <div class="cap" id="lbCap"></div>
+</div>
+
+<script>
+(function(){
+  var root = document.documentElement;
+
+  /* 텍스트 크기 */
+  var sizeBtns = document.querySelectorAll('.sizectl button');
+  function setSize(v){
+    if (v === 'base') root.removeAttribute('data-size'); else root.setAttribute('data-size', v);
+    sizeBtns.forEach(function(b){ b.setAttribute('aria-pressed', String(b.dataset.size === v)); });
+    try{ localStorage.setItem('cl-size', v); }catch(e){}
+  }
+  sizeBtns.forEach(function(b){ b.addEventListener('click', function(){ setSize(b.dataset.size); }); });
+  try{ var saved = localStorage.getItem('cl-size'); if(saved) setSize(saved); }catch(e){}
+
+  /* 탭 */
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('.tab'));
+  var secs = Array.prototype.slice.call(document.querySelectorAll('[data-tab]'));
+  var hasJS = true;
+  function show(id, scroll){
+    secs.forEach(function(s){ s.style.display = (s.id === id) ? '' : 'none'; });
+    tabs.forEach(function(t){ t.setAttribute('aria-selected', String(t.dataset.target === id)); });
+    try{ history.replaceState(null, '', id === 'ui' ? '#' : '#' + id); }catch(e){}
+    if (scroll) {
+      var el = document.getElementById(id);
+      if (el) window.scrollTo({top: el.getBoundingClientRect().top + window.pageYOffset - 66, behavior:'smooth'});
+    }
+  }
+  tabs.forEach(function(t){
+    t.addEventListener('click', function(){ show(t.dataset.target, true); });
+  });
+  /* 처음엔 첫 섹션만 */
+  var startId = (location.hash || '').replace('#','');
+  var validIds = secs.map(function(s){ return s.id; });
+  show(validIds.indexOf(startId) >= 0 ? startId : 'ui', false);
+
+  /* 내부 점프 링크 (현장 사진으로) */
+  document.querySelectorAll('[data-jump]').forEach(function(a){
+    a.addEventListener('click', function(ev){
+      ev.preventDefault();
+      show(a.dataset.jump, true);
+    });
+  });
+  document.querySelectorAll('footer a[href="#top"]').forEach(function(a){
+    a.addEventListener('click', function(ev){ ev.preventDefault(); window.scrollTo({top:0, behavior:'smooth'}); });
+  });
+
+  /* 라이트박스 */
+  var lb = document.getElementById('lb'),
+      lbImg = document.getElementById('lbImg'),
+      lbCap = document.getElementById('lbCap'),
+      shots = Array.prototype.slice.call(document.querySelectorAll('.shot .pic')),
+      idx = 0;
+  function openAt(i){
+    idx = (i + shots.length) % shots.length;
+    var b = shots[idx];
+    lbImg.src = b.dataset.full;
+    lbCap.textContent = b.dataset.cap || '';
+    lb.setAttribute('open','');
+  }
+  function close(){ lb.removeAttribute('open'); lbImg.src=''; }
+  shots.forEach(function(b,i){ b.addEventListener('click', function(){ openAt(i); }); });
+  document.getElementById('lbClose').addEventListener('click', close);
+  document.getElementById('lbPrev').addEventListener('click', function(){ openAt(idx-1); });
+  document.getElementById('lbNext').addEventListener('click', function(){ openAt(idx+1); });
+  lb.addEventListener('click', function(ev){ if(ev.target === lb) close(); });
+  document.addEventListener('keydown', function(ev){
+    if (!lb.hasAttribute('open')) return;
+    if (ev.key === 'Escape') close();
+    if (ev.key === 'ArrowLeft') openAt(idx-1);
+    if (ev.key === 'ArrowRight') openAt(idx+1);
+  });
+})();
+</script>
+</body>
+</html>
