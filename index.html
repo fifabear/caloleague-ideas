@@ -193,6 +193,35 @@
     font-size:.8em;color:#9fb2d6;padding:2px 3px 0;border-top:1px solid rgba(255,255,255,.08);margin-top:2px
   }
 
+  /* fitculator LED board mock */
+  .mock2{
+    background:#0a0f1c;border-radius:16px;padding:12px;margin:0 0 20px;border:1px solid #070b14;color:#e9eefb;
+  }
+  .mock2 .grid{display:grid;grid-template-columns:1.1fr .9fr;gap:10px}
+  .m2-panel{background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.09);border-radius:12px;padding:12px 13px}
+  .m2-timeline{display:flex;flex-wrap:wrap;gap:4px;margin:0 0 11px;font-size:.66em;color:#93a6cb;letter-spacing:.02em}
+  .m2-timeline span{padding:3px 7px;border-radius:6px;background:rgba(255,255,255,.06)}
+  .m2-timeline span.on{background:#dfe7ff;color:#101832;font-weight:850}
+  .m2-kicker{font-size:.68em;letter-spacing:.14em;color:#8fa8d8;font-weight:850;margin:0}
+  .m2-block{font-size:1.45em;font-weight:900;letter-spacing:-.01em;color:#dfe7ff;margin:3px 0 0;line-height:1.2}
+  .m2-timer{font-size:clamp(34px,7vw,56px);font-weight:800;line-height:1;letter-spacing:-.02em;color:#f2f5ff;margin:8px 0 10px;font-variant-numeric:tabular-nums}
+  .m2-task{display:flex;align-items:baseline;gap:10px;padding:5px 0;border-top:1px solid rgba(255,255,255,.08);font-size:.88em}
+  .m2-task .w{font-weight:850;color:#c9d6f2;min-width:78px}
+  .m2-task .n{font-weight:750;color:#fff}
+  .m2-task .u{color:#8fa8d8;font-size:.8em}
+  .m2-foot{color:#8fa8d8;font-size:.7em;margin-top:9px;letter-spacing:.02em;line-height:1.5}
+  .m2-head{display:flex;justify-content:space-between;align-items:baseline;font-size:.7em;color:#9fb2d6;letter-spacing:.06em;font-weight:800;margin:0 0 9px}
+  .m2-head b{color:#fff;font-size:1.3em;letter-spacing:0;font-weight:900}
+  .m2-card{border-radius:10px;padding:8px 11px;margin-bottom:7px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08)}
+  .m2-card .row{display:flex;justify-content:space-between;align-items:center;gap:8px}
+  .m2-card .who{font-size:.82em;font-weight:800;color:#dfe7ff}
+  .m2-card .bpm{font-size:1.5em;font-weight:900;line-height:1.05;color:#fff}
+  .m2-card .bpm small{font-size:.42em;font-weight:800;color:#9fb2d6;margin-left:3px}
+  .m2-card .meta{display:flex;justify-content:space-between;font-size:.72em;color:#9fb2d6;font-weight:750;margin-top:2px}
+  .m2-card.hot{background:linear-gradient(135deg,#f7a9e7,#b9a8f7);border-color:#fff}
+  .m2-card.hot .who,.m2-card.hot .bpm{color:#1a1030}
+  .m2-card.hot .bpm small,.m2-card.hot .meta{color:#4a3a6b}
+
   /* gallery */
   .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(255px,1fr));gap:14px;margin:6px 0 22px}
   .shot{
@@ -262,6 +291,7 @@
     section.card{padding:20px 17px 6px; border-radius:16px}
     .hero{padding:26px 0 2px}
     .mock{grid-template-columns:1fr}
+    .mock2 .grid{grid-template-columns:1fr}
     .shot img{height:180px}
     table{display:block;overflow-x:auto;white-space:nowrap}
     thead th, td{white-space:normal}
@@ -307,17 +337,18 @@
 
   <header class="hero" id="top">
     <span class="eyebrow">🍀 5060 회원을 위한 게임화 피트니스 리그</span>
-    <h1>칼로리그 <span>아이디어 7가지</span></h1>
+    <h1>칼로리그 <span>아이디어 8가지</span></h1>
     <p class="lead">
       큰 글씨 기본 화면 + 매장 TV 현황판 + 실시간 점수·랭크 게임화 + “절대 기록 대신 목표 근접도”.
-      이 네 가지가 5060 회원을 위한 칼로리그의 차별점입니다. 아래 카드에서 항목별로 확인하세요.
+      여기에 코엑스 엑스포에서 직접 본 <b>핏큘레이터(운동량 점수)</b>와 <b>츄룹(링크 하나로 모임 운영)</b>을 더했습니다. 아래 카드에서 항목별로 확인하세요.
     </p>
     <ul class="chips">
       <li><i>🔠</i>큰 글씨가 기본</li>
       <li><i>📺</i>매장 TV 현황판</li>
       <li><i>🏅</i>실시간 점수 · 랭크</li>
       <li><i>🎯</i>목표 근접도 점수</li>
-      <li><i>📷</i>현장 사진 9장</li>
+      <li><i>🏟️</i>핏큘레이터 · 츄룹</li>
+      <li><i>📷</i>현장 사진 14장</li>
     </ul>
   </header>
 
@@ -329,6 +360,7 @@
     <button class="tab" type="button" role="tab" data-target="global" aria-selected="false">⑤ 해외 12곳</button>
     <button class="tab" type="button" role="tab" data-target="token" aria-selected="false">⑥ 응원 토큰</button>
     <button class="tab" type="button" role="tab" data-target="league" aria-selected="false">⑦ 레벨 리그</button>
+    <button class="tab" type="button" role="tab" data-target="fitculator" aria-selected="false">⑧ 핏큘레이터 · 츄룹</button>
     <button class="tab" type="button" role="tab" data-target="shots" aria-selected="false">📷 현장 사진</button>
   </nav>
 
@@ -603,6 +635,200 @@
         <span class="pill b">오프라인 측정</span>
         <span class="pill m">팀전 · 뽑기</span>
       </div>
+    </section>
+
+    <!-- 8 -->
+    <section class="card" id="fitculator" data-tab>
+      <div class="sec-head">
+        <span class="num">8</span>
+        <div>
+          <h2>핏큘레이터(Fitculator) · 츄룹(truloop) — 코엑스 현장 벤치마킹</h2>
+          <p class="sub">2026-11-22 웰니스&amp;마인드케어 엑스포(코엑스) 부스 직접 관찰 · “BURN, BUT FUN.” POWERED BY FITCULATOR · 1000 CAL CLUB × truloop × ARIH</p>
+        </div>
+      </div>
+
+      <div class="callout info">
+        <span class="t">한 줄</span>
+        핏큘레이터는 <b>운동을 ‘기록’에서 ‘점수’로</b> 바꾸고, 츄룹은 <b>모임 참여를 ‘앱 설치’에서 ‘링크 하나’로</b> 바꿉니다. 칼로리그에 필요한 두 조각이 하나는 앱에, 하나는 모임 운영에 있었습니다.
+      </div>
+
+      <h3>① 핏큘레이터 — 워치가 뭐든 하나의 트레이닝 점수(pt)</h3>
+      <ul class="clean">
+        <li><b>다기종 연동, 점수는 하나</b> — 가민 · 애플워치 · 갤럭시 · 어메이즈핏(Zepp) 기록이 자동 동기화되고, <b>유산소+근력 · 강도+시간</b>을 합쳐 단일 <b>pt</b>로 환산합니다.</li>
+        <li><b>부족 / 적정 / 과훈련 판별</b> — 이번 주 운동량을 <b>최근 4주 평균</b>과 비교해 “적정 범위인지”를 먼저 말해 줍니다. (운동생리학 박사가 설계한 알고리즘, WHO 신체활동 지침 기준)</li>
+        <li><b>하이록스 공식 기록</b> — 8개 런 + 8개 스테이션(스키에르그 · 슬레드 푸시 · 로잉 등)을 <b>스플릿으로 개별 입력</b>, 시즌·레이스 공식 결과를 조회해 내 운동과 연결, <b>디비전별 PB</b> 자동 추적.</li>
+        <li><b>PR 트래킹</b> — 스쿼트 · 클린 · 스내치 <b>1RM~5RM</b>, 로잉 · 스키에르그 · 어썰트바이크 카디오 벤치마크를 그래프로 관리.</li>
+        <li><b>코치 WOD</b> — 코치가 배정한 데일리 프로그램(WOD · 웜업 · 스트렝스)을 확인하고 완료하면 점수 획득, 주간 캘린더·리더보드에서 멤버와 경쟁. 코치가 공유를 켠 챌린지에서는 <b>코치의 운동 기록</b>까지 열람.</li>
+        <li><b>오프라인 동기화</b> — 신호가 약한 매장에서도 홈 · MY · 챌린지가 마지막 화면을 보여 주고, 온라인이 되면 운동·댓글·좋아요가 자동으로 올라갑니다.</li>
+      </ul>
+
+      <table>
+        <thead><tr><th>화면</th><th>하는 일</th><th>우리 센터에 옮기면</th></tr></thead>
+        <tbody>
+          <tr><td>홈</td><td>내 커뮤니티 · 챌린지가 맨 위, 내 순위와 오늘의 프로그램 · 멤버 최근 활동</td><td>입구 TV·카톡 공지와 같은 첫 화면</td></tr>
+          <tr><td>MY</td><td>주 · 월 · 연 · 전체 기간, 거리(km) ↔ 운동량(pt) 전환, 지난 기간과 막대 비교</td><td>4주 · 시즌 리포트 한 장</td></tr>
+          <tr><td>챌린지</td><td>포인트 · 거리 · 운동 횟수 3종 리더보드, 개인 목표를 이름 옆에 표시</td><td>5팀 × 10명 = 50명 리그의 그릇</td></tr>
+          <tr><td>대회</td><td>하이록스 · 마라톤 스플릿, 공유 코드로 시뮬레이션 대회 리더보드</td><td>매장 내 시뮬레이션 대회</td></tr>
+          <tr><td>알림</td><td>코치가 운동을 기록하면 참가자에게 알림, 조용한 시간 22~08시</td><td>5060 야간 알림 차단 기본값</td></tr>
+        </tbody>
+      </table>
+
+      <div class="callout warn">
+        <span class="t">현장에서 본 판매 방식</span>
+        배너는 앱 기능이 아니라 <b>“BURN, BUT FUN.” / POWERED BY FITCULATOR</b>. 옆에 <b>1000 CAL CLUB × truloop × ARIH</b>. 앱을 설명하는 대신 <b>대회를 열어 앱을 체험시키고</b> 있었습니다 — 2인 1팀 클래스에 참가시키고, 기록·점수·전광판은 앱이 뒤에서 처리.
+      </div>
+
+      <h3>② 현장 전광판(대형 LED) UI 해부 — 사진에서 읽은 구조</h3>
+      <p>가로로 긴 LED 한 장을 <b>좌우 2분할</b>했습니다. 왼쪽은 “지금 무엇을 하는가”, 오른쪽은 “지금 누가 얼마나 하고 있는가”. 아래는 사진에 찍힌 실제 화면을 그대로 옮긴 모형입니다.</p>
+
+      <div class="mock2" aria-hidden="true">
+        <div class="grid">
+          <div class="m2-panel">
+            <div class="m2-timeline">
+              <span>WARM UP 1‘</span><span>MAIN</span><span>BLOCK 1 10’</span><span>REST 1‘</span><span>BLOCK 2 10’</span><span>REST 1‘</span><span class="on">BLOCK 3 10’</span><span>COOL DOWN</span>
+            </div>
+            <p class="m2-kicker">CARDIO · TEAM OF 2 · FOR TIME</p>
+            <p class="m2-block">BLOCK 03</p>
+            <div class="m2-timer">00:59</div>
+            <div class="m2-task"><span class="w">25/30 CAL</span><span class="n">Ski</span><span class="u">스키에르그</span></div>
+            <div class="m2-task"><span class="w">25/30 CAL</span><span class="n">Row</span><span class="u">로잉</span></div>
+            <div class="m2-task"><span class="w">25/30 CAL</span><span class="n">Bike</span><span class="u">바이크</span></div>
+            <div class="m2-task"><span class="w">25/30 REPS</span><span class="n">Burpee</span></div>
+            <div class="m2-task"><span class="w">MAX</span><span class="n">Run</span><span class="u">랩 카운트</span></div>
+            <p class="m2-foot">SPLIT THE REPS · RUN TOGETHER · COUNT YOUR LAPS<br>NEXT — COOL DOWN</p>
+          </div>
+          <div class="m2-panel">
+            <div class="m2-head"><span>ON AIR <b>5/5</b></span><span>CLASS KCAL <b>1,144</b></span></div>
+            <div class="m2-card">
+              <div class="row"><span class="who">HABIN</span><span class="bpm">126<small>BPM</small></span></div>
+              <div class="meta"><span>240 KCAL</span><span>ZONE 2</span></div>
+            </div>
+            <div class="m2-card">
+              <div class="row"><span class="who">산경민</span><span class="bpm">124<small>BPM</small></span></div>
+              <div class="meta"><span>294 KCAL</span><span>ZONE 2</span></div>
+            </div>
+            <div class="m2-card hot">
+              <div class="row"><span class="who">김수미</span><span class="bpm">176<small>BPM</small></span></div>
+              <div class="meta"><span>442 KCAL</span><span>ZONE 5</span></div>
+            </div>
+            <div class="m2-card">
+              <div class="row"><span class="who">Heeju Jo</span><span class="bpm">69<small>BPM</small></span></div>
+              <div class="meta"><span>67 KCAL</span><span>ZONE 1</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <table>
+        <thead><tr><th>영역</th><th>화면 요소</th><th>읽히는 역할</th></tr></thead>
+        <tbody>
+          <tr><td>좌 상단</td><td>진행 타임라인 — WARM UP 1‘ · MAIN · BLOCK 1 10’ · REST 1‘ · BLOCK 2 · REST 1’ · BLOCK 3 10‘ · COOL DOWN</td><td>“언제 끝나는지”를 가장 먼저 보여 줌</td></tr>
+          <tr><td>좌 중앙</td><td>BLOCK 03 + 00:59 대형 카운트다운</td><td>남은 시간 하나에 시선 집중</td></tr>
+          <tr><td>좌 하단</td><td>TEAM OF 2 · FOR TIME / 25-30 CAL Ski · Row · Bike / 25-30 REPS Burpee / MAX Run / “SPLIT THE REPS · RUN TOGETHER · COUNT YOUR LAPS”</td><td>미션과 분담 규칙을 화면 안에서 끝냄 (설명할 코치가 줄어듦)</td></tr>
+          <tr><td>우 상단</td><td>ON AIR 5/5 · CLASS KCAL 1,144</td><td>클래스 전체가 쌓은 양 = 단체 성취</td></tr>
+          <tr><td>우 개인 카드</td><td>이름 · 큰 BPM · KCAL · ZONE 1~5, 높은 존 카드만 핑크/바이올렛으로 강조 (김수미 176 BPM · 442 KCAL · ZONE 5)</td><td>“저 사람 저렇게 뛰는데 나는?” — 옆자리 비교가 아니라 화면과의 비교</td></tr>
+        </tbody>
+      </table>
+
+      <ul class="clean">
+        <li><b>숫자 위계 3단</b> — 블록·타이머(가장 큼) → 개인 BPM(중간) → KCAL·존(작게). 무엇을 먼저 봐야 하는지가 크기로 정해져 있습니다.</li>
+        <li><b>존은 색으로만</b> — 존 1~5를 글자로 나열하지 않고 카드 색으로만 구분. 5060 화면에서는 이 색을 <b>“높은 존”이 아니라 “목표 근접”</b>에 쓰는 게 안전합니다(④ 참고).</li>
+        <li><b>측정 방식</b> — 가슴 심박밴드로 실시간 BPM을 받고, 운동량은 기계(스키에르그·로잉·바이크) 캘로리 표시를 신뢰. 우리 매장은 워치 동기화(사후)로 시작하고 <b>단체전만 밴드 대여</b>가 현실적입니다.</li>
+      </ul>
+
+      <h3>③ 츄룹(truloop) — 카톡방은 그대로, 모임 운영만 링크 하나로</h3>
+      <ul class="clean">
+        <li><b>링크 1개</b> — 평소 쓰던 단톡방에 모임 링크만 공유. 초대부터 다음 약속까지 그 링크에서 이어집니다.</li>
+        <li><b>앱 설치 없이 신청</b> — 게스트는 이벤트 링크에서 <b>전화번호만으로</b> 참가 신청. 앱은 채팅·사진 공유에서만 필요합니다.</li>
+        <li><b>유료 티켓</b> — 클럽 결제 계좌를 연결하고 티켓 가격을 정하면, 신청과 동시에 결제·명단에 반영. 정원 · 신청 시작 시각 · 대기 명단 · 신청 시작 문자 알림까지 한곳에서. <b>현재 유료 티켓에 별도 플랫폼 수수료 없음.</b></li>
+        <li><b>QR · 이름 체크인</b> — 현장에서 티켓 스캔 또는 이름으로 체크인. 운영진 모두가 같은 실시간 명단을 보므로 “왔어요?” 확인 전화가 사라집니다.</li>
+        <li><b>사진 자동 취합</b> — 모임이 끝나면 사진 공유 알림이 가고, 사진이 <b>참석자별로 자동 분류</b>. 스포츠팀은 <b>등번호</b>로도 모아 줍니다. 단톡방 사진이 저장기한에 사라지는 문제가 없습니다.</li>
+        <li><b>클럽 홈</b> — 공지 상단 고정 · 투표 · 다가오는 일정 · 지난 모임 기록 · 멤버별 참석 이력이 프로필에 누적.</li>
+      </ul>
+
+      <div class="callout">
+        <span class="t">현장 포지셔닝 — 우리에게 중요한 부분</span>
+        부스 모니터 문구는 “<b>웰니스 커뮤니티 운영진을 위한 츄룹 소개</b> / 지금 바로 상담 문의”였습니다. 개인 약속 앱으로 파는 게 아니라 <b>동호회·클럽 운영 도구(B2B)</b>로 파는 중이라는 뜻이고, 그래서 코엑스 웰니스 엑스포에 부스를 냈습니다.
+      </div>
+
+      <p class="srcline">근거 — 러닝 리그 <b>R1</b>이 참가자 3,000명 관리·당일 QR 체크인·현장 사진을 츄룹으로 통합(2026-10 보도), 국내 운동 커뮤니티 <b>천칼로리클럽(1000 CAL CLUB)</b>도 사용. 채팅·사진 공유는 앱 설치가 필요하고, 멤버가 직접 여는 번개 모임 기능은 시범 운영 중.</p>
+
+      <h3>④ 칼로리그 &amp; 센터 적용 포인트 4가지</h3>
+      <div class="top5">
+        <div class="item">
+          <span class="r">1</span>
+          <div>
+            <b>전광판은 2분할, 강조색은 ‘높은 존’이 아니라 ‘목표 근접’에</b>
+            <span>좌측에 WOD·타이머·블록, 우측에 개인 카드(이름 · 큰 숫자 · 칼로리 · 존), 상단 한 줄에 팀 총합. 다만 5060 화면에서는 존 5를 색으로 띄우지 않고 <b>목표 90~110% 근접</b>을 강조색으로 씁니다. 과훈련을 미덕으로 보이게 하지 않기 위해서입니다.</span>
+            <span class="src">참고 핏큘레이터 현장 전광판 · F45/Myzone 목표 근접도</span>
+          </div>
+        </div>
+        <div class="item">
+          <span class="r">2</span>
+          <div>
+            <b>워치 무관 1점수 + 5060 과훈련 브레이크</b>
+            <span>가민·애플·갤럭시·어메이즈핏 어느 것이든 pt 하나로. 이번 주를 <b>최근 4주 평균</b>과 비교해, 2~3주 연속 웃돌면 화면에 “이번 주는 회복” 카드와 강도 하향을 제안합니다. 5060에게는 “더”보다 <b>“적정”을 칭찬하는</b> 채점표가 오래 갑니다.</span>
+            <span class="src">참고 핏큘레이터 트레이닝 부하(4주 평균 대비)</span>
+          </div>
+        </div>
+        <div class="item">
+          <span class="r">3</span>
+          <div>
+            <b>하이록스 트랙과 5060 트랙은 ‘같은 앱, 다른 채점표’로 이원화</b>
+            <span>하이록스 트랙 = 8런 + 8스테이션 스플릿 · 디비전 PB · 1RM~5RM. 5060 트랙 = 목표 근접도(90~110%) + 상한 캡 + 출석. 팀 리그 점수는 공통 pt로 합치고, 개인 카드만 트랙별로 다르게 보여 주면 운영이 갈라지지 않습니다.</span>
+            <span class="src">참고 핏큘레이터 대회 기록 · 칼로리그 기존 CP 설계</span>
+          </div>
+        </div>
+        <div class="item">
+          <span class="r">4</span>
+          <div>
+            <b>특강·번개 모임은 ‘무설치 링크’로 받는다</b>
+            <span>카톡방에 링크 1개 → 전화번호로 신청 → 현장 QR 체크인 → 끝나면 사진 자동 취합. 5060은 앱 설치 단계에서 가장 많이 이탈하므로, <b>신청·결제·체크인은 웹으로, 기록·점수는 앱으로</b> 나눕니다.</span>
+            <span class="src">참고 츄룹(링크 신청 · QR 체크인 · 사진 자동 분류)</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout warn">
+        <span class="t">그대로 사면 안 되는 것</span>
+        현장은 <b>가슴 심박밴드 + 대형 LED 임대</b>로 만든 무대입니다. 우리 매장 1호점에서는 ① 전광판은 기존 TV 2대(Fully Kiosk)로 같은 2분할을 만들고 ② BPM은 워치 동기화(사후)로 시작하며 ③ 단체전·특강 때만 밴드를 대여하는 순서가 비용 대비 효율적입니다.
+      </div>
+
+      <h3>⑤ 현장 사진 5장</h3>
+      <div class="gallery">
+        <figure class="shot">
+          <button class="pic" type="button" data-full="https://lh3.googleusercontent.com/d/1e9wXhDQuUDQwDPk7dhCjlJotIWfatGLl=w1600" data-cap="사진 1 · 부스 전경 — BURN, BUT FUN. / POWERED BY FITCULATOR (IMG_8965)">
+            <img src="https://lh3.googleusercontent.com/d/1e9wXhDQuUDQwDPk7dhCjlJotIWfatGLl=w1200" alt="핏큘레이터 부스 전경 — BURN, BUT FUN. POWERED BY FITCULATOR" loading="lazy">
+          </button>
+          <figcaption class="cap"><span class="n">사진 1 · IMG_8965</span><b>부스 전경</b><span>상단에 “BURN, BUT FUN.” / POWERED BY FITCULATOR, 좌우 기둥은 truloop. 입구 데스크에는 ARIH 캔이 색으로 정렬돼 시선을 잡습니다.</span></figcaption>
+        </figure>
+        <figure class="shot">
+          <button class="pic" type="button" data-full="https://lh3.googleusercontent.com/d/1Ebq1Vfh8E9kqWuknO4jypa521QcMCi9g=w1600" data-cap="사진 2 · 1000 CAL CLUB × truloop × ARIH 운영 데스크 (IMG_8966)">
+            <img src="https://lh3.googleusercontent.com/d/1Ebq1Vfh8E9kqWuknO4jypa521QcMCi9g=w1200" alt="1000 CAL CLUB · truloop · ARIH 부스와 운영 데스크" loading="lazy">
+          </button>
+          <figcaption class="cap"><span class="n">사진 2 · IMG_8966</span><b>운영 데스크</b><span>노트북에는 이벤트 생성 화면, 옆에는 “You run the scene. We run the rest.” QR. 접수·결제·체크인을 한 사람이 노트북 하나로 처리하는 구조.</span></figcaption>
+        </figure>
+        <figure class="shot">
+          <button class="pic" type="button" data-full="https://lh3.googleusercontent.com/d/1LvIqBWYLVz5GizTBSg9VSr67LEByth33=w1600" data-cap="사진 3 · 전광판 전체 — ON AIR 5/5 · CLASS KCAL 1,144 (IMG_8969)">
+            <img src="https://lh3.googleusercontent.com/d/1LvIqBWYLVz5GizTBSg9VSr67LEByth33=w1200" alt="대형 LED 전광판 — 좌측 BLOCK 03과 타이머, 우측 참가자별 BPM·KCAL·ZONE" loading="lazy">
+          </button>
+          <figcaption class="cap"><span class="n">사진 3 · IMG_8969</span><b>전광판 전체</b><span>좌 BLOCK 03 · 00:59 · 25/30 CAL Ski·Row·Bike, 우 HABIN·진건호·산경민·김수미·Heeju Jo. 상단 ON AIR 5/5 · CLASS KCAL 1,144.</span></figcaption>
+        </figure>
+        <figure class="shot">
+          <button class="pic" type="button" data-full="https://lh3.googleusercontent.com/d/1FABxrDj1a3rDml_osTgY29cjjnTRg1TY=w1600" data-cap="사진 4 · 전광판 클로즈업 — 타임라인 · TEAM OF 2 · FOR TIME (IMG_8970)">
+            <img src="https://lh3.googleusercontent.com/d/1FABxrDj1a3rDml_osTgY29cjjnTRg1TY=w1200" alt="전광판 클로즈업 — 진행 타임라인, BLOCK 03 00:44, Ski Row Bike Burpee Run" loading="lazy">
+          </button>
+          <figcaption class="cap"><span class="n">사진 4 · IMG_8970</span><b>전광판 클로즈업</b><span>상단 타임라인(WARM UP 1‘ ~ COOL DOWN)에서 현재 블록만 밝게. 2인 1팀 · FOR TIME, Ski/Row/Bike 25-30 CAL, Burpee 25-30 REPS, Run MAX. 왼쪽은 Concept2 스키에르그.</span></figcaption>
+        </figure>
+        <figure class="shot">
+          <button class="pic" type="button" data-full="https://lh3.googleusercontent.com/d/1A3djFXRJ6Fe9B83Abuwl7QJO3zj8IAYD=w1600" data-cap="사진 5 · 츄룹 현장 안내 모니터 (IMG_8971)">
+            <img src="https://lh3.googleusercontent.com/d/1A3djFXRJ6Fe9B83Abuwl7QJO3zj8IAYD=w1200" alt="츄룹 현장 안내 모니터 — 웰니스 커뮤니티 운영진을 위한 츄룹 소개" loading="lazy">
+          </button>
+          <figcaption class="cap"><span class="n">사진 5 · IMG_8971</span><b>츄룹 안내 모니터</b><span>“웰니스 커뮤니티 운영진을 위한 츄룹 소개 / 지금 바로 상담 문의”. 뒤편 협찬사 월(FITCULATOR · YETI · new balance · HUROM 등)이 규모를 대신 말해 줍니다.</span></figcaption>
+        </figure>
+      </div>
+
+      <p class="srcline">원본 5장 — <a href="https://drive.google.com/drive/folders/166cHygfXkCvneWFhSpwaU9OKigdHcGba" target="_blank" rel="noopener">드라이브 폴더 ‘칼로리그_레퍼런스’</a> · 참고 <a href="https://www.fitculator.io/" target="_blank" rel="noopener">fitculator.io</a> · <a href="https://truloop.app/ko/club-leaders" target="_blank" rel="noopener">truloop.app(클럽 리더)</a></p>
     </section>
 
     <!-- gallery -->
