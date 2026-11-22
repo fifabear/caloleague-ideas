@@ -255,6 +255,46 @@
   .top5 .item span{color:var(--ink-2);font-size:.92em}
   .top5 .item .src{display:block;margin-top:6px;color:var(--ink-3);font-size:.82em;font-weight:700}
 
+  /* ---------- global benchmark service cards ---------- */
+  .svc{
+    border:1px solid var(--line);border-radius:16px;padding:20px 20px 14px;margin:16px 0;
+    background:#fcfdff;scroll-margin-top:80px;
+  }
+  .svc-h{display:flex;gap:13px;align-items:flex-start}
+  .svc-n{
+    flex:0 0 auto;width:34px;height:34px;border-radius:11px;display:grid;place-items:center;
+    background:linear-gradient(145deg,#2f6bf6,#12a594);color:#fff;font-weight:850;font-size:.92em;
+  }
+  .svc-h h3{margin:0;font-size:1.06em;letter-spacing:-.01em;line-height:1.35}
+  .svc-h h3 small{display:block;font-weight:650;color:var(--ink-3);font-size:.72em;letter-spacing:0;margin-top:3px}
+  .svc-one{
+    margin:9px 0 2px;color:var(--ink);font-size:.97em;background:var(--brand-soft);
+    border-radius:12px;padding:10px 13px;border:1px solid #d7e2ff;
+  }
+  .svc-one b{font-weight:800}
+  .svc-gallery{margin:14px 0 0}
+  .svc-gallery .shot img{height:196px}
+  .svc-gallery .shot.tall img{object-fit:contain;background:#0e1524}
+  .grab{
+    margin:12px 0 4px;font-size:.92em;color:#0d5f57;background:var(--mint-soft);
+    border:1px solid #c6ece5;border-radius:12px;padding:11px 14px;
+  }
+  .svc-body{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:12px 0 8px}
+  .box{border-radius:14px;padding:13px 15px;font-size:.93em;border:1px solid}
+  .box b{display:block;margin-bottom:6px;font-size:.95em}
+  .box ul{margin:0;padding-left:18px}
+  .box li{margin:0 0 6px;line-height:1.6}
+  .box.ok{background:#f2f8ff;border-color:#d5e4fb;color:#1c3a6e}
+  .box.ok b{color:#17408f}
+  .box.new{background:#fffaf0;border-color:#f6e3bf;color:#6b4708}
+  .box.new b{color:#7a4a09}
+  .dev{
+    margin:10px 0 6px;font-size:.92em;color:var(--ink-2);
+    border-left:3px solid #b9c6e4;padding:2px 0 2px 12px;
+  }
+  .dev .who{font-weight:850;color:var(--brand)}
+  h3.grp{margin:34px 0 6px;font-size:1.06em;padding-top:14px;border-top:1px dashed var(--line)}
+
   /* lightbox */
   .lb{
     position:fixed;inset:0;z-index:90;display:none;place-items:center;
@@ -300,11 +340,16 @@
     .shot img{height:132px}
     .shot .cap{padding:10px 11px 12px}
     .shot .cap span{display:none}
+    .svc{padding:16px 14px 10px}
+    .svc-body{grid-template-columns:1fr}
+    .svc-gallery .shot img{height:132px}
+    .svc-gallery .shot .cap span{display:block}
   }
   @media (max-width:430px){
     .gallery{grid-template-columns:1fr}
     .shot img{height:200px}
     .shot .cap span{display:block}
+    .svc-gallery .shot img{height:190px}
   }
   @media print{
     body{background:#fff}
@@ -523,60 +568,689 @@
       <div class="sec-head">
         <span class="num">5</span>
         <div>
-          <h2>해외 게임화 · 시니어 피트니스 12곳 — 바로 쓸 Top 5</h2>
-          <p class="sub">12곳을 조사해 그중 지금 바로 적용할 수 있는 5가지</p>
-        </div>
-      </div>
-
-      <div class="top5">
-        <div class="item">
-          <span class="r">1</span>
-          <div>
-            <b>CP를 ‘절대 칼로리’ → ‘목표 근접도 + 상한 캡’으로</b>
-            <span>목표 90~110% 달성 시 보너스, 초과분은 캡. 50대와 60대를 같은 기준으로 공정하게.</span>
-            <span class="src">참고 F45 · Myzone</span>
-          </div>
-        </div>
-        <div class="item">
-          <span class="r">2</span>
-          <div>
-            <b>시즌·월별 ‘연속 개월 랭크’를 TV에 상시 게시</b>
-            <span>1·3·6·12개월 단계 랭크, 만료 전 갱신하면 유지.</span>
-            <span class="src">참고 Myzone Status</span>
-          </div>
-        </div>
-        <div class="item">
-          <span class="r">3</span>
-          <div>
-            <b>입회·6주·12주 ‘몸 나이’ 평가 루프</b>
-            <span>벌점 없음, 결과지 1장으로 건강관리 동기 부여.</span>
-            <span class="src">참고 EGYM · Club Active · Gym Tonic</span>
-          </div>
-        </div>
-        <div class="item">
-          <span class="r">4</span>
-          <div>
-            <b>리더보드 3분할 + 월간 리셋, 비교군 선택권</b>
-            <span>CP·출석·목표달성률로 나눠 50명 전원이 어딘가에 이름을 올림.</span>
-            <span class="src">참고 F45 Trials · EGYM</span>
-          </div>
-        </div>
-        <div class="item">
-          <span class="r">5</span>
-          <div>
-            <b>동반·추천은 ‘쿠폰’이 아닌 ‘상시 권리’로</b>
-            <span>시즌권에 월 2회 동반권 내장, 추천 보상은 기간 연장.</span>
-            <span class="src">참고 Planet Fitness · Orangetheory</span>
-          </div>
+          <h2>해외 12곳 + Entrance — 사진으로 보는 쉬운 벤치마킹</h2>
+          <p class="sub">뮤즈 해외 12곳 리포트 + Entrance · 실제 화면·시설 사진 27장 · 중학생도 이해하는 설명</p>
         </div>
       </div>
 
       <div class="callout info">
-        <span class="t">운영 포인트</span>
-        <b>평가 → 처방 → 재측정</b> 루프는 비싼 장비 없이 수기 입력 기반으로도 운영할 수 있습니다.
+        <span class="t">이 페이지 읽는 법 (규상 님께)</span>
+        각 서비스마다 <b>① 한 줄 요약</b> → <b>② 사진</b> → <b>③ ✅ 이미 생각한 것과 비슷한 것</b> → <b>④ ✨ 미처 생각 못 한 것</b> → <b>⑤ 개발 메모</b> 순서입니다.
+        다 읽으실 필요 없고, <b>✅는 “이미 합의된 방향이라 그대로 가면 되는 것”</b>, <b>✨는 “이번에 새로 빌려올 아이디어”</b>만 보시면 됩니다.
+        맨 아래 <a href="#g-dev3" data-jump-anchor>이번 주에 만들 화면 3개</a>로 바로 내려가셔도 됩니다.
       </div>
 
-      <p class="srcline">12곳 전체 상세 리포트 — <a href="https://muse.ai/s/haeoe-geimhwa-sinieo-piteuniseu-sarye-xgxk6xrexoxvf90xe/mBriNqJrU9vHRO47wRDsZzMiaJwl7d4ZtVzV4hbL1IA" target="_blank" rel="noopener">뮤즈 글로벌 리서치 정리본 보기</a></p>
+      <div class="pillrow">
+        <span class="pill b">Entrance</span>
+        <span class="pill b">Myzone</span>
+        <span class="pill b">Orangetheory</span>
+        <span class="pill b">Gym Tonic</span>
+        <span class="pill b">Club Active</span>
+        <span class="pill b">Curves</span>
+        <span class="pill">F45</span>
+        <span class="pill">EGYM</span>
+        <span class="pill">milon</span>
+        <span class="pill">Exercise Coach</span>
+        <span class="pill">ActiveSG</span>
+        <span class="pill">chocoZAP</span>
+        <span class="pill">Planet Fitness</span>
+      </div>
+
+      <!-- ============ Entrance ============ -->
+      <article class="svc" id="g-entrance">
+        <header class="svc-h">
+          <span class="svc-n">E</span>
+          <div>
+            <h3>Entrance <small>멕시코시티 · 인터랙티브 피트니스 아레나</small></h3>
+            <p class="svc-one">50분 수업 내내 내 점수가 화면에 뜨고, 잘하면 다음 단계로 올라가는 “게임 같은 운동장”이에요.</p>
+          </div>
+        </header>
+
+        <div class="gallery svc-gallery">
+          <figure class="shot">
+            <button class="pic" type="button" data-full="https://lh3.googleusercontent.com/d/1oJyH9CMjV-Rot_7D6szqu1FGpmlTkqw5=w1600" data-cap="Entrance · 내 점수 화면 — TU SCORE 2,380점 · 심박 구간 · 소모 칼로리 385 · 운동 시간 49:32">
+              <img src="https://lh3.googleusercontent.com/d/1oJyH9CMjV-Rot_7D6szqu1FGpmlTkqw5=w1200" alt="Entrance 앱 점수 화면 — 점수·심박 구간·칼로리·운동 시간" loading="lazy">
+            </button>
+            <figcaption class="cap"><span class="n">사진 1 · 점수 화면</span><b>운동이 끝나면 남는 것</b><span>가운데 큰 숫자가 내 점수(2,380). 그 아래 심박 구간·칼로리·시간이 작게 붙습니다.</span></figcaption>
+          </figure>
+          <figure class="shot tall">
+            <button class="pic" type="button" data-full="https://lh3.googleusercontent.com/d/11bXHnwiA1G7zUT-P99PH81Uo9eaFiql0=w1600" data-cap="Entrance · 붉은 조명의 아레나 분위기 (공식 캠페인 이미지)">
+              <img src="https://lh3.googleusercontent.com/d/11bXHnwiA1G7zUT-P99PH81Uo9eaFiql0=w1200" alt="Entrance 아레나 분위기 — 붉은 조명 아래 운동하는 회원" loading="lazy">
+            </button>
+            <figcaption class="cap"><span class="n">사진 2 · 아레나</span><b>조명·음악·화면이 한 세트</b><span>운동을 “기록”이 아니라 “경험”으로 팝니다.</span></figcaption>
+          </figure>
+        </div>
+        <p class="grab">📷 이 사진들에서 가져올 건 딱 하나 — <b>“점수 하나로 끝내는 화면”</b>이에요. 점수 안에 심박·칼로리·시간이 이미 들어 있어서, 회원은 숫자 하나만 봐도 됩니다.</p>
+
+        <div class="svc-body">
+          <div class="box ok">
+            <b>✅ 이미 생각한 것과 비슷 — 그대로 가면 되는 것</b>
+            <ul>
+              <li>수업 중 <b>실시간 점수판</b> — 우리 ③ TV 현황판과 같은 방향</li>
+              <li><b>등급 승급</b>(Rookie → 상위 티어) — 우리 ⑦ 레벨 리그와 같음</li>
+              <li><b>저강도·긴 수업 트랙</b>(Burn) — 5060반을 따로 두기로 한 것과 같음</li>
+            </ul>
+          </div>
+          <div class="box new">
+            <b>✨ 미처 생각 못 한 것 — 새로 빌려올 것</b>
+            <ul>
+              <li><b>지표를 하나로 합치기</b>: 화면에 점수·심박·칼로리·시간을 나란히 두면 5060은 읽지 않습니다. Entrance는 <b>점수 하나</b>로 묶고 나머지는 작게 뒷줄로 보냅니다.</li>
+              <li><b>저강도반과 고강도반이 같은 리그</b>: 힘든 반(Burn)과 센 반이 <b>같은 점수표</b>로 겨룹니다. 우리도 5060반과 하이록스반을 한 리그에 두는 근거가 됩니다.</li>
+              <li><b>분위기를 상품으로</b>: 붉은 조명·음악·큰 화면. 시설이 아니라 “여기서 운동하는 기분”을 팝니다.</li>
+            </ul>
+          </div>
+        </div>
+        <p class="dev"><span class="who">👨‍💻 규상 님께</span> 점수 화면에 <b>숫자는 3개까지만</b> 넣어 주세요. 크기 순서는 <b>내 점수 &gt; 오늘 목표 &gt; 나머지</b>. 그 아래 작은 글씨로 칼로리·시간을 붙이면 끝입니다.</p>
+        <p class="srcline">공식 — <a href="https://www.entrancexp.com/" target="_blank" rel="noopener">entrancexp.com</a> · Instagram <a href="https://www.instagram.com/entrance_xp/" target="_blank" rel="noopener">@entrance_xp</a></p>
+      </article>
+
+      <!-- ============ 1 Myzone ============ -->
+      <article class="svc" id="g-myzone">
+        <header class="svc-h">
+          <span class="svc-n">1</span>
+          <div>
+            <h3>Myzone <small>영국·글로벌 · 심박 기반 점수 플랫폼</small></h3>
+            <p class="svc-one">운동을 잘하는 사람이 이기는 게 아니라, <b>“내 심박 기준으로 얼마나 열심히 했는지”</b>로 점수를 줘요. 그래서 초보도 고수와 같은 점수를 받을 수 있어요.</p>
+          </div>
+        </header>
+
+        <div class="gallery svc-gallery">
+          <figure class="shot">
+            <button class="pic" type="button" data-full="https://lh3.googleusercontent.com/d/13HVUKNki0ntmtWsIIB4_Zxe9KO6J8EVo=w1600" data-cap="Myzone · 매장 TV 화면(타일 모드) — 회원별 이름·심박·점수, 상단에 전체 누적 점수 150,770">
+              <img src="https://lh3.googleusercontent.com/d/13HVUKNki0ntmtWsIIB4_Zxe9KO6J8EVo=w1200" alt="Myzone 매장 TV 타일 화면 — 회원별 심박과 점수가 격자로" loading="lazy">
+            </button>
+            <figcaption class="cap"><span class="n">사진 1 · TV 타일 화면</span><b>한 사람 = 한 칸</b><span>이름, 큰 숫자(심박), 아래 작은 숫자(점수·칼로리). 20명이 넘어도 한 화면에 들어갑니다.</span></figcaption>
+          </figure>
+          <figure class="shot tall">
+            <button class="pic" type="button" data-full="https://lh3.googleusercontent.com/d/1K-9TTdPJH8bsuns7J4KXI46zQV_nwkBp=w1600" data-cap="Myzone · 매장에 실제로 설치된 세로형 화면 — 상단 283,770점은 매장 전체 누적">
+              <img src="https://lh3.googleusercontent.com/d/1K-9TTdPJH8bsuns7J4KXI46zQV_nwkBp=w1200" alt="매장 벽에 설치된 Myzone 세로 화면" loading="lazy">
+            </button>
+            <figcaption class="cap"><span class="n">사진 2 · 매장 설치</span><b>TV 한 대로 끝</b><span>별도 장비 없이 기존 TV에 띄우는 방식 — 우리 ② Fully Kiosk와 같은 구조.</span></figcaption>
+          </figure>
+        </div>
+        <p class="grab">📷 가져올 건 딱 하나 — <b>“타일 한 칸의 정보량을 3개로 줄인 화면”</b>이에요. 이름 · 큰 숫자 · 작은 숫자. 그 이상은 넣지 않습니다.</p>
+
+        <div class="svc-body">
+          <div class="box ok">
+            <b>✅ 이미 생각한 것과 비슷 — 그대로 가면 되는 것</b>
+            <ul>
+              <li><b>노력 기반 점수</b>(MEPs) — 우리가 잡은 ‘목표 근접도’와 같은 발상</li>
+              <li><b>점수 상한 캡</b>: 고강도에 상한을 둬서 “무리한 사람이 이기는” 구조를 막음 — 우리 CP 캡과 동일</li>
+              <li><b>연속 개월 랭크</b>(1개월 아이언 → 12개월 골드) — 우리가 2순위로 잡은 ‘연속 랭크’</li>
+            </ul>
+          </div>
+          <div class="box new">
+            <b>✨ 미처 생각 못 한 것 — 새로 빌려올 것</b>
+            <ul>
+              <li><b>초보도 고수와 같은 점수</b>를 받는 비율 설계: 존마다 분당 점수를 1·2·3·4·4점으로 주고 <b>맨 윗존은 4점에서 멈춥니다.</b> “더 세게”보다 “제 구간에서 오래”가 이득이 됩니다.</li>
+              <li><b>화면 맨 위에 매장 전체 점수 한 줄</b>(150,770): 개인 순위보다 <b>단체 성취</b>를 먼저 보여줘서 5060이 부담을 덜 느낍니다.</li>
+              <li><b>WHO 권장량을 목표 숫자로</b>: “한 달 1,300점”처럼 국제 기준을 빌려 오면 “왜 이 숫자예요?”라는 질문이 사라집니다.</li>
+            </ul>
+          </div>
+        </div>
+        <p class="dev"><span class="who">👨‍💻 규상 님께</span> 타일 하나에 <b>이름 · 점수 · 심박</b> 이렇게 3개만. 색은 5단계 대신 <b>3단계(부족 / 적정 / 많음)</b>로 줄여 주세요. 5060은 색이 5개면 못 외웁니다.</p>
+        <p class="srcline">공식 — <a href="https://www.myzone.org/features/in-club-solutions" target="_blank" rel="noopener">myzone.org (in-club)</a> · <a href="https://www.myzone.org/blog/what-are-myzone-effort-points-meps" target="_blank" rel="noopener">MEPs 설명</a> · <a href="https://www.myzone.org/blog/myzone-status-levels" target="_blank" rel="noopener">Status 단계</a></p>
+      </article>
+
+      <!-- ============ 2 Orangetheory ============ -->
+      <article class="svc" id="g-otf">
+        <header class="svc-h">
+          <span class="svc-n">2</span>
+          <div>
+            <h3>Orangetheory <small>미국 · 스튜디오 TV + 12분 존</small></h3>
+            <p class="svc-one">수업 내내 심박을 재서, <b>‘주황 구간’에 머문 시간</b>만큼 점수를 줘요. 옆 사람과 비교하는 게 아니라 <b>내 심박 기준</b>으로 겨루는 방식이에요.</p>
+          </div>
+        </header>
+
+        <div class="gallery svc-gallery">
+          <figure class="shot">
+            <button class="pic" type="button" data-full="https://lh3.googleusercontent.com/d/11ddj4d6aUMt92UBdgpbUFCJmhXozpRuv=w1600" data-cap="Orangetheory · 스튜디오 전경 — 러닝머신 줄과 주황 조명">
+              <img src="https://lh3.googleusercontent.com/d/11ddj4d6aUMt92UBdgpbUFCJmhXozpRuv=w1200" alt="Orangetheory 스튜디오 — 러닝머신이 줄지어 있고 주황 조명" loading="lazy">
+            </button>
+            <figcaption class="cap"><span class="n">사진 1 · 스튜디오</span><b>모두가 같은 화면을 본다</b><span>트레드밀·로잉·웨이트를 도는 동안 벽 화면에 우리 반 심박이 계속 떠 있습니다.</span></figcaption>
+          </figure>
+          <figure class="shot tall">
+            <button class="pic" type="button" data-full="https://lh3.googleusercontent.com/d/1QaHcSZauIoOOToq2SMKmUxdUNfOJ6HY4=w1600" data-cap="Orangetheory 앱 · 운동 결과 — 55분 · 750 칼로리 · 22 스플랫 포인트">
+              <img src="https://lh3.googleusercontent.com/d/1QaHcSZauIoOOToq2SMKmUxdUNfOJ6HY4=w1200" alt="Orangetheory 앱 운동 결과 화면 — 시간·칼로리·스플랫 포인트" loading="lazy">
+            </button>
+            <figcaption class="cap"><span class="n">사진 2 · 결과 점수</span><b>“22점” 하나로 요약</b><span>주황·빨강 구간에 머문 1분 = 1점. 수업 설계 목표는 12~20점입니다.</span></figcaption>
+          </figure>
+          <figure class="shot tall">
+            <button class="pic" type="button" data-full="https://lh3.googleusercontent.com/d/194CQs9pJ5HYtvj1JxabDzm7gj6CfHWIz=w1600" data-cap="Orangetheory 앱 · 운동 후 요약 리포트 — 구간별 막대 그래프">
+              <img src="https://lh3.googleusercontent.com/d/194CQs9pJ5HYtvj1JxabDzm7gj6CfHWIz=w1200" alt="Orangetheory 앱 운동 요약 — 구간별 막대 그래프" loading="lazy">
+            </button>
+            <figcaption class="cap"><span class="n">사진 3 · 요약 리포트</span><b>끝나고 한 장</b><span>“어느 구간에 얼마나 있었는지”만 막대로. 다음 수업 목표가 여기서 나옵니다.</span></figcaption>
+          </figure>
+        </div>
+        <p class="grab">📷 가져올 건 딱 하나 — <b>“오늘 목표 시간을 정해 주는 화면”</b>이에요. “오늘은 주황 12분”처럼 끝이 보이는 숫자를 줍니다.</p>
+
+        <div class="svc-body">
+          <div class="box ok">
+            <b>✅ 이미 생각한 것과 비슷 — 그대로 가면 되는 것</b>
+            <ul>
+              <li>TV에 <b>이름·심박·구간</b> 표시 — 우리 ③ 현황판과 같음</li>
+              <li><b>개인 기준 점수</b>: 남보다 빠르게가 아니라 내 기준으로 — 우리 목표 근접도와 같음</li>
+              <li>운동 후 <b>개인 리포트</b> 한 장 — 우리 시즌 리포트와 같음</li>
+            </ul>
+          </div>
+          <div class="box new">
+            <b>✨ 미처 생각 못 한 것 — 새로 빌려올 것</b>
+            <ul>
+              <li><b>“12분” 목표</b>: 점수를 “많이”가 아니라 <b>“목표 시간을 채웠나”</b>로 바꿉니다. 5060에게 “덜 해도 성공”을 보장하는 장치예요.</li>
+              <li><b>심박 기준 자동 보정</b>: 처음엔 나이 공식, <b>5회 수업 후 내 실제 값</b>으로 바꿉니다. 우리는 “3회 측정 후 보정”으로 단순화하면 됩니다.</li>
+              <li><b>힘든 사람만 색으로 표시</b>: 심박이 안 오르는 회원 카드를 화면에서 다르게 보여 코치가 먼저 말을 걸게 합니다.</li>
+            </ul>
+          </div>
+        </div>
+        <p class="dev"><span class="who">👨‍💻 규상 님께</span> 심박은 처음엔 자동이 아니라 <b>코치가 넣는 값</b>으로 시작해요. 화면에는 <b>“오늘 목표 12분 중 6분”</b> 같은 문장 하나만 있으면 충분합니다.</p>
+        <p class="srcline">공식 — <a href="https://www.orangetheory.com/en-us/" target="_blank" rel="noopener">orangetheory.com</a> · <a href="https://www.orangetheory.com/en-us/faq" target="_blank" rel="noopener">FAQ(첫 수업 무료·추천 보상)</a></p>
+      </article>
+
+      <!-- ============ 3 Gym Tonic ============ -->
+      <article class="svc" id="g-gymtonic">
+        <header class="svc-h">
+          <span class="svc-n">3</span>
+          <div>
+            <h3>Gym Tonic <small>싱가포르 · 시니어 근력 12주 프로그램</small></h3>
+            <p class="svc-one">어르신이 <b>12주 동안 주 2회</b> 운동하고, 시작과 끝에 “힘이 얼마나 늘었는지” 검사해서 <b>종이 한 장</b>으로 받아요.</p>
+          </div>
+        </header>
+
+        <div class="gallery svc-gallery">
+          <figure class="shot">
+            <button class="pic" type="button" data-full="https://lh3.googleusercontent.com/d/1lglVo999OMKJ9n94rhvo54LcpvkNXFal=w1600" data-cap="Gym Tonic · 밝은 방에서 유압 기구로 운동하는 어르신과 코치">
+              <img src="https://lh3.googleusercontent.com/d/1lglVo999OMKJ9n94rhvo54LcpvkNXFal=w1200" alt="Gym Tonic — 어르신이 유압식 기구에서 운동 중" loading="lazy">
+            </button>
+            <figcaption class="cap"><span class="n">사진 1 · 기구 운동</span><b>힘 준 만큼만 무거워짐</b><span>유압식이라 무게를 고르지 않아도 됩니다. 5~7대의 기구로 전신을 돕니다.</span></figcaption>
+          </figure>
+          <figure class="shot">
+            <button class="pic" type="button" data-full="https://lh3.googleusercontent.com/d/1eLdA0X4tIpXqMd5g0Lz8TCdXswH8zGGR=w1600" data-cap="Gym Tonic · 코치가 옆에서 자세를 잡아 주는 모습">
+              <img src="https://lh3.googleusercontent.com/d/1eLdA0X4tIpXqMd5g0Lz8TCdXswH8zGGR=w1200" alt="Gym Tonic — 코치가 어르신 자세를 지도" loading="lazy">
+            </button>
+            <figcaption class="cap"><span class="n">사진 2 · 코치</span><b>혼자 두지 않는다</b><span>웰니스 코치가 상주하며 개인별 부하를 조절합니다. 회당 40~60분.</span></figcaption>
+          </figure>
+        </div>
+        <p class="grab">📷 가져올 건 딱 하나 — <b>“시작·끝을 같은 자로 재서 종이 한 장으로 주는 것”</b>이에요. 앱 화면보다 인쇄물이 먼저입니다.</p>
+
+        <div class="svc-body">
+          <div class="box ok">
+            <b>✅ 이미 생각한 것과 비슷 — 그대로 가면 되는 것</b>
+            <ul>
+              <li><b>평가 → 처방 → 재측정</b> 루프 — 우리가 이미 정한 구조</li>
+              <li><b>12주 사이클</b>(주 2회 · 24회) — 우리 시즌 12주와 정확히 같음</li>
+              <li><b>무료 체험을 ‘기구 체험 + 신체 평가’로</b> 묶는 방식</li>
+            </ul>
+          </div>
+          <div class="box new">
+            <b>✨ 미처 생각 못 한 것 — 새로 빌려올 것</b>
+            <ul>
+              <li><b>재측정 결과지 자동 출력</b>: 악력·앉았다 일어서기·균형 3항목만 재서 <b>“힘 +23%”</b>가 큰 글씨로 찍힌 A4 한 장을 시즌 끝에 건넵니다. 앱을 안 켜는 회원도 성과를 손에 쥐게 됩니다.</li>
+              <li><b>가격표에 세대별 구간을 명시</b>(정상 / 고령 / 복지카드) — “우리도 해당되나?”라는 질문이 신뢰로 바뀝니다.</li>
+              <li><b>수료 후 평균 근력 향상</b>을 숫자로 공개(운영사 발표 기준) — 상담 때 쓸 근거가 됩니다.</li>
+            </ul>
+          </div>
+        </div>
+        <p class="dev"><span class="who">👨‍💻 규상 님께</span> 결과지는 <b>PDF 1장, 항목 3개 고정</b>으로 만들어 주세요. 화면에서 예쁘게 보여 주는 것보다 <b>인쇄가 먼저</b>입니다. 항목이 늘어나면 아무도 안 봅니다.</p>
+        <p class="srcline">공식 — <a href="https://fycs.org/seniors/active-ageing-centres/gym-tonic-centres/" target="_blank" rel="noopener">Fei Yue (Gym Tonic)</a> · <a href="https://www.lionsbefrienders.org.sg/gym-tonic/" target="_blank" rel="noopener">Lions Befrienders</a></p>
+      </article>
+
+      <!-- ============ 4 Club Active ============ -->
+      <article class="svc" id="g-clubactive">
+        <header class="svc-h">
+          <span class="svc-n">4</span>
+          <div>
+            <h3>Club Active <small>호주 · 50세 이상 전용 클럽</small></h3>
+            <p class="svc-one">50세 이상만 오는 헬스장이에요. 처음 오면 <b>‘내 몸 나이’를 무료로 재 주고</b>, 6주마다 다시 재서 보고서로 보여줘요.</p>
+          </div>
+        </header>
+
+        <div class="gallery svc-gallery">
+          <figure class="shot">
+            <button class="pic" type="button" data-full="https://lh3.googleusercontent.com/d/1XiEsa9lTEv9DMxUyUUFs31ZJI-m_-n86=w1600" data-cap="Club Active · 60대 부부가 나란히 유산소 기구로 운동">
+              <img src="https://lh3.googleusercontent.com/d/1XiEsa9lTEv9DMxUyUUFs31ZJI-m_-n86=w1200" alt="Club Active — 나이 든 부부가 나란히 유산소 운동" loading="lazy">
+            </button>
+            <figcaption class="cap"><span class="n">사진 1 · 클럽 풍경</span><b>“여기 오면 나이를 안 부끄럽다”</b><span>밝고 조용한 톤, 젊은 층 위압감 없음. 이것 자체가 마케팅입니다.</span></figcaption>
+          </figure>
+          <figure class="shot">
+            <button class="pic" type="button" data-full="https://lh3.googleusercontent.com/d/1fQPROJP_5vDYBOu6G_w9npnyEFOZIjuc=w1600" data-cap="Club Active · 운동생리사가 백발 회원의 자세를 잡아 주는 장면">
+              <img src="https://lh3.googleusercontent.com/d/1fQPROJP_5vDYBOu6G_w9npnyEFOZIjuc=w1200" alt="Club Active — 전문가가 백발 회원을 지도" loading="lazy">
+            </button>
+            <figcaption class="cap"><span class="n">사진 2 · 전문가 상주</span><b>운동처방을 파는 곳</b><span>운동생리사·물리치료사·영양사가 상주하며 개인 질환에 맞춘 프로그램을 짭니다.</span></figcaption>
+          </figure>
+        </div>
+        <p class="grab">📷 가져올 건 딱 하나 — <b>“몸 나이 한 숫자”</b>예요. 근력·균형·체성분을 합쳐 숫자 하나로 만들고, 6주마다 다시 잽니다.</p>
+
+        <div class="svc-body">
+          <div class="box ok">
+            <b>✅ 이미 생각한 것과 비슷 — 그대로 가면 되는 것</b>
+            <ul>
+              <li><b>5060 전용 포지셔닝</b> — “젊은 하이록스 클럽”이 아니라 “50+ 전용”</li>
+              <li><b>무료 평가를 체험보다 앞에</b> 두는 순서</li>
+              <li><b>6주 중간 점검 + 12주 재평가</b> 두 박자</li>
+            </ul>
+          </div>
+          <div class="box new">
+            <b>✨ 미처 생각 못 한 것 — 새로 빌려올 것</b>
+            <ul>
+              <li><b>수업 이름을 ‘목적’으로</b>: Strong / Active 50 / Better Balance / Mobility Moves. 우리도 “근력반·균형반·스트레칭반”처럼 <b>목적이 이름</b>이 되게.</li>
+              <li><b>무약정(no lock-in)</b>을 전면에: 한국식 주 단위 결제 대신 <b>“중도 해지 위약금 없음”</b> 한 줄로 번역하면 시니어 불안이 줄어듭니다.</li>
+              <li><b>평가 결과가 곧 영업 도구</b>: 평가 → “몸 나이 −3세” 목표 설정 → 프로그램 제안. 순서가 자연스럽습니다.</li>
+            </ul>
+          </div>
+        </div>
+        <p class="dev"><span class="who">👨‍💻 규상 님께</span> 회원 카드에 <b>‘몸 나이’ 한 칸</b>만 두고, 6주마다 값 하나씩 쌓아 주세요. 그래프는 <b>점 두 개를 잇는 선</b>으로 충분합니다.</p>
+        <p class="srcline">공식 — <a href="https://clubactive.com.au/" target="_blank" rel="noopener">clubactive.com.au</a> · <a href="https://clubactive.com.au/get-started/" target="_blank" rel="noopener">시작 절차</a></p>
+      </article>
+
+      <!-- ============ 5 Curves ============ -->
+      <article class="svc" id="g-curves">
+        <header class="svc-h">
+          <span class="svc-n">5</span>
+          <div>
+            <h3>Curves Japan (カーブス) <small>일본 · 여성 전용 30분 서킷</small></h3>
+            <p class="svc-one">기구 30초 → 발판 30초를 <b>두 바퀴</b> 돌고 스트레칭, 끝. 예약 없이 와서 <b>30분</b>만 하고 가요.</p>
+          </div>
+        </header>
+
+        <div class="gallery svc-gallery">
+          <figure class="shot">
+            <button class="pic" type="button" data-full="https://lh3.googleusercontent.com/d/1SbUXDEpODGp-yo9ic5BN68gFhVOpxhlL=w1600" data-cap="Curves · 기구와 스텝 보드를 번갈아 도는 서킷 (공식 보도자료 사진)">
+              <img src="https://lh3.googleusercontent.com/d/1SbUXDEpODGp-yo9ic5BN68gFhVOpxhlL=w1200" alt="Curves 서킷 — 여성들이 기구와 스텝 보드를 번갈아 운동" loading="lazy">
+            </button>
+            <figcaption class="cap"><span class="n">사진 1 · 서킷</span><b>같이, 같은 순서로</b><span>기구 12대와 발판을 30초씩 교대. 음악과 구호에 맞춰 모두가 같이 움직입니다.</span></figcaption>
+          </figure>
+          <figure class="shot">
+            <button class="pic" type="button" data-full="https://lh3.googleusercontent.com/d/1RJuSQ-H8suxaO9D1AxQ3KBjnX45IjvTF=w1600" data-cap="Curves · 30초 교대 2바퀴 + 스트레칭 = 30분 도해 (공식 보도자료)">
+              <img src="https://lh3.googleusercontent.com/d/1RJuSQ-H8suxaO9D1AxQ3KBjnX45IjvTF=w1200" alt="Curves 30분 구성 도해 — 30초씩 교대 2바퀴, 마지막 스트레칭" loading="lazy">
+            </button>
+            <figcaption class="cap"><span class="n">사진 2 · 30분 구조</span><b>시간이 정해져 있다</b><span>30초 × 24곳 = 24분, 스트레칭 6분. 회원이 “언제 끝나는지”를 압니다.</span></figcaption>
+          </figure>
+          <figure class="shot tall">
+            <button class="pic" type="button" data-full="https://lh3.googleusercontent.com/d/1mnl4WCNIk3tqQ-Ejxr8LAH8I9ZWKGZ4D=w1600" data-cap="Curves 앱 · 회원 바코드 화면 — 앱을 열면 첫 화면이 입장 카드">
+              <img src="https://lh3.googleusercontent.com/d/1mnl4WCNIk3tqQ-Ejxr8LAH8I9ZWKGZ4D=w1200" alt="Curves 앱 회원 바코드 화면" loading="lazy">
+            </button>
+            <figcaption class="cap"><span class="n">사진 3 · 앱 첫 화면</span><b>앱은 ‘입장’부터</b><span>기능 목록이 아니라 바코드. 문 앞에서 1초 안에 쓸 수 있어야 한다는 뜻입니다.</span></figcaption>
+          </figure>
+        </div>
+        <p class="grab">📷 가져올 건 딱 하나 — <b>“30초 타이머 하나로 운영되는 서킷”</b>이에요. 화면에 필요한 건 지금 몇 번째 기구인지, 남은 시간 몇 초인지뿐입니다.</p>
+
+        <div class="svc-body">
+          <div class="box ok">
+            <b>✅ 이미 생각한 것과 비슷 — 그대로 가면 되는 것</b>
+            <ul>
+              <li><b>30분 완결 · 예약 없는</b> 저부담 트랙 — 60대 여성 회원의 입구</li>
+              <li><b>출석 중심</b> 운영, 코치 상주</li>
+              <li><b>유압식 기구</b>: 무게를 안 골라도 되니 초보가 안전</li>
+            </ul>
+          </div>
+          <div class="box new">
+            <b>✨ 미처 생각 못 한 것 — 새로 빌려올 것</b>
+            <ul>
+              <li><b>앱 첫 화면 = 회원 바코드</b>: 우리도 앱을 열면 <b>QR 입장</b>이 먼저. “오늘 점수”는 그다음.</li>
+              <li><b>‘월 8회’를 직원도 지키는 규범으로</b>: 회원에게만 요구하지 않고 직원도 월 8회 운동 — 팀별 ‘월 최소 출석’ 룰로 번역.</li>
+              <li><b>생일·출석 도장판</b>: 종이 도장 12칸(한 달) + 생일 주엔 도장 2개. 앱 알림보다 냉장고에 붙는 종이가 오래갑니다.</li>
+              <li><b>지자체 건강 행사에 평가 부스로 참여</b>해 ‘지역 건강 거점’이 되는 길.</li>
+            </ul>
+          </div>
+        </div>
+        <p class="dev"><span class="who">👨‍💻 규상 님께</span> 서킷 화면은 <b>타이머 하나 + 기구 번호 하나</b>면 끝이에요. 앱 첫 화면은 <b>QR/바코드</b>로 잡아 주세요. 그 두 개가 이 서비스의 전부입니다.</p>
+        <p class="srcline">공식 — <a href="https://www.curves.co.jp/" target="_blank" rel="noopener">curves.co.jp</a> · <a href="https://www.curves.co.jp/faq/" target="_blank" rel="noopener">FAQ(30초·24분)</a> · 사진: Curves 공식 보도자료</p>
+      </article>
+
+      <h3 class="grp">나머지 7곳 — 같은 방식으로 짧게</h3>
+
+      <!-- ============ 6 F45 ============ -->
+      <article class="svc" id="g-f45">
+        <header class="svc-h">
+          <span class="svc-n">6</span>
+          <div>
+            <h3>F45 Training <small>호주·글로벌 · TV 운동 가이드</small></h3>
+            <p class="svc-one">TV에 <b>오늘 운동 순서와 남은 시간</b>이 크게 뜨고, 옆에 사람들 심박이 같이 떠요. 점수는 “많이 한 사람”이 아니라 <b>“목표에 가까운 사람”</b>이 이겨요.</p>
+          </div>
+        </header>
+
+        <div class="gallery svc-gallery">
+          <figure class="shot tall">
+            <button class="pic" type="button" data-full="https://lh3.googleusercontent.com/d/1n_AUpV_gKPExDHrYgiN-w4mRoFWpxU2a=w1600" data-cap="F45 TV 앱 · 화면에 운동 이름과 남은 시간, 다음 동작이 뜨는 구조">
+              <img src="https://lh3.googleusercontent.com/d/1n_AUpV_gKPExDHrYgiN-w4mRoFWpxU2a=w1200" alt="F45 TV 앱 — 운동 화면과 타이머" loading="lazy">
+            </button>
+            <figcaption class="cap"><span class="n">사진 1 · TV 운동 화면</span><b>코치 설명을 줄인다</b><span>무슨 동작을, 몇 초 동안, 다음은 무엇인지가 화면 안에서 끝납니다.</span></figcaption>
+          </figure>
+          <figure class="shot tall">
+            <button class="pic" type="button" data-full="https://lh3.googleusercontent.com/d/1wmHpxQKM7nKjpmdT0JQDVfWRlTQppNz-=w1600" data-cap="F45 앱 · LionHeart 심박 리포트 — 수업별 심박 그래프와 포인트">
+              <img src="https://lh3.googleusercontent.com/d/1wmHpxQKM7nKjpmdT0JQDVfWRlTQppNz-=w1200" alt="F45 앱 LionHeart 심박 리포트" loading="lazy">
+            </button>
+            <figcaption class="cap"><span class="n">사진 2 · 심박 리포트</span><b>수업 후 한 장</b><span>최저·최고 심박, 칼로리, 포인트. “오늘 몇 점”이 남습니다.</span></figcaption>
+          </figure>
+        </div>
+        <p class="grab">📷 가져올 건 딱 하나 — <b>“목표에 가까우면 보너스”</b>라는 규칙이에요. 45점 목표에 ±5점 이내면 +10, ±3점 이내면 +15.</p>
+
+        <div class="svc-body">
+          <div class="box ok">
+            <b>✅ 이미 생각한 것과 비슷 — 그대로 가면 되는 것</b>
+            <ul>
+              <li><b>TV 운동 가이드 타이머</b> — 우리 ③ 현황판</li>
+              <li><b>목표 근접 보너스</b> — 우리 CP 개편 1순위</li>
+              <li><b>리더보드 3분할</b>(점수·출석·평가)</li>
+            </ul>
+          </div>
+          <div class="box new">
+            <b>✨ 미처 생각 못 한 것 — 새로 빌려올 것</b>
+            <ul>
+              <li><b>‘목표 맞히기’ 게임</b>: 목표에 <u>정확히</u> 가까울수록 보너스. 많이 하는 게 손해가 되는 첫 구조입니다.</li>
+              <li><b>평가 보드는 남녀 분리, Top 10만</b> — 전체 순위를 다 보여주지 않아 꼴찌가 노출되지 않습니다.</li>
+              <li><b>“집에서도 같은 점수”</b>: 앱 운동도 같은 점수로 쌓이게.</li>
+            </ul>
+          </div>
+        </div>
+        <p class="dev"><span class="who">👨‍💻 규상 님께</span> 계산은 <b>“목표 − 내 점수”의 차이</b> 하나만 저장하면 돼요. 화면에는 <b>목표 · 내 점수 · 차이</b> 3개만 보여 주세요.</p>
+        <p class="srcline">공식 — <a href="https://f45training.com/article/what-is-lionheart/" target="_blank" rel="noopener">F45 LionHeart</a> · <a href="https://member-help.f45.com/support/solutions/folders/151000547241" target="_blank" rel="noopener">Performance Tracker 안내</a></p>
+      </article>
+
+      <!-- ============ 7 EGYM ============ -->
+      <article class="svc" id="g-egym">
+        <header class="svc-h">
+          <span class="svc-n">7</span>
+          <div>
+            <h3>EGYM <small>독일 · 자동 세팅 + 몸 나이</small></h3>
+            <p class="svc-one">기구가 내 키·무게·힘을 기억해서 <b>알아서 세팅</b>해 주고, 화면에 뜬 <b>곡선을 따라가면</b> 운동이 돼요. 앱에는 ‘몸 나이’가 떠요.</p>
+          </div>
+        </header>
+
+        <div class="gallery svc-gallery">
+          <figure class="shot">
+            <button class="pic" type="button" data-full="https://lh3.googleusercontent.com/d/1JFsK0-CPuBhwc4recpTtGjGQ_kKxCoFp=w1600" data-cap="EGYM · 기구 화면의 곡선을 따라가며 반복하는 모습 (독일 Fitnesspark 운영 사례)">
+              <img src="https://lh3.googleusercontent.com/d/1JFsK0-CPuBhwc4recpTtGjGQ_kKxCoFp=w1200" alt="EGYM 기구 화면의 곡선을 따라 운동하는 회원" loading="lazy">
+            </button>
+            <figcaption class="cap"><span class="n">사진 1 · 곡선 따라가기</span><b>게임처럼 반복</b><span>화면의 물결 모양대로 움직이면 속도·범위가 맞습니다. 코치 없이도 자세가 잡힙니다.</span></figcaption>
+          </figure>
+          <figure class="shot tall">
+            <button class="pic" type="button" data-full="https://lh3.googleusercontent.com/d/10FNzFSAMafnhCdeqpuQBVPcRk_WSJmQ2=w1600" data-cap="EGYM 앱 · BioAge(몸 나이) 화면 — 근력·지구력 등을 하나의 나이로">
+              <img src="https://lh3.googleusercontent.com/d/10FNzFSAMafnhCdeqpuQBVPcRk_WSJmQ2=w1200" alt="EGYM 앱 BioAge 화면" loading="lazy">
+            </button>
+            <figcaption class="cap"><span class="n">사진 2 · 몸 나이</span><b>지표 4개 → 숫자 1개</b><span>근력·유연성·대사·심폐를 실제 나이와 비교한 한 숫자로 보여 줍니다.</span></figcaption>
+          </figure>
+        </div>
+        <p class="grab">📷 가져올 건 딱 하나 — <b>“오늘의 목표 곡선”</b>이에요. 종이 한 장에 그려 줘도 됩니다. 맞았는지는 코치가 체크.</p>
+
+        <div class="svc-body">
+          <div class="box ok">
+            <b>✅ 이미 생각한 것과 비슷 — 그대로 가면 되는 것</b>
+            <ul>
+              <li><b>몸 나이(BioAge)</b> — 우리 3순위 적용안</li>
+              <li><b>월간 리셋 리더보드 + 비공개 선택권</b></li>
+              <li>운동 전 <b>30분 온보딩</b> 절차</li>
+            </ul>
+          </div>
+          <div class="box new">
+            <b>✨ 미처 생각 못 한 것 — 새로 빌려올 것</b>
+            <ul>
+              <li><b>‘세팅 카드’로 자동 세팅 흉내내기</b>: 회원마다 기구 순서·무게·시트 번호를 적은 카드 한 장. 100㎡에서도 서킷 회전이 빨라집니다.</li>
+              <li><b>이름 없이 순위 보기</b>: “3위 · 김OO” 대신 번호만. 순위 스트레스로 나가는 회원을 막습니다.</li>
+              <li><b>3개월에 몸 나이 −8.8세</b> 같은 운영사 실측 수치를 상담 자료로.</li>
+            </ul>
+          </div>
+        </div>
+        <p class="dev"><span class="who">👨‍💻 규상 님께</span> 자동 세팅은 <b>나중 일</b>이에요. 지금은 <b>회원별 ‘세팅 카드’ 한 장</b>(기구 순서·무게·시트 번호)이면 충분합니다.</p>
+        <p class="srcline">공식 — <a href="https://us.egym.com/en-us/workouts/smartstrength/circuit" target="_blank" rel="noopener">EGYM Circuit</a> · <a href="https://knowledge.egym.com/en/member-app/community/activity-ranking" target="_blank" rel="noopener">Activity Ranking</a></p>
+      </article>
+
+      <!-- ============ 8 milon ============ -->
+      <article class="svc" id="g-milon">
+        <header class="svc-h">
+          <span class="svc-n">8</span>
+          <div>
+            <h3>milon <small>독일 · 칩 자동 세팅 서킷</small></h3>
+            <p class="svc-one">칩 하나로 내 세팅이 <b>자동으로 잡히는 12대 서킷</b>이에요. 한 바퀴 <b>17.5분</b>, 두 바퀴 <b>35분</b>. 독일에서는 건강보험이 돈을 돌려주는 ‘예방 코스’로 인정받아요.</p>
+          </div>
+        </header>
+
+        <div class="gallery svc-gallery">
+          <figure class="shot">
+            <button class="pic" type="button" data-full="https://lh3.googleusercontent.com/d/1UW0M2yoE2e93nliCNk-e1FTg3WmSB7Ii=w1600" data-cap="milon · 강도·유산소가 섞인 서킷 — 기구 화면에 milon 로고와 운동 안내 (milon 공식 이미지)">
+              <img src="https://lh3.googleusercontent.com/d/1UW0M2yoE2e93nliCNk-e1FTg3WmSB7Ii=w1200" alt="milon 서킷 — 회원들이 기구에서 운동" loading="lazy">
+            </button>
+            <figcaption class="cap"><span class="n">사진 1 · 서킷</span><b>12명이 동시에</b><span>좁은 면적에서 12명이 같이 도는 구조 — 우리 100㎡ 서킷의 참고 모델.</span></figcaption>
+          </figure>
+        </div>
+        <p class="grab">📷 가져올 건 딱 하나 — <b>“정확한 시간 약속”</b>이에요. “한 바퀴 17.5분”처럼 회원이 계산할 수 있는 숫자.</p>
+
+        <div class="svc-body">
+          <div class="box ok">
+            <b>✅ 이미 생각한 것과 비슷 — 그대로 가면 되는 것</b>
+            <ul>
+              <li><b>서킷 자동 기록</b>, 짧은 시간 고회전</li>
+              <li><b>의료·재활 언어</b>로 60대의 지불 저항 낮추기</li>
+            </ul>
+          </div>
+          <div class="box new">
+            <b>✨ 미처 생각 못 한 것 — 새로 빌려올 것</b>
+            <ul>
+              <li><b>출석 증명 패키지</b>: 시즌 시작일 고정·고정 그룹·출석부·사전사후 측정을 처음부터 서류로 쌓아 두면, 나중에 지자체·보건소 연계 때 그대로 제출할 수 있습니다.</li>
+              <li><b>‘예방 코스’ 포장</b>: “운동”이 아니라 “12주 건강 코스”로 이름 붙이기.</li>
+            </ul>
+          </div>
+        </div>
+        <p class="dev"><span class="who">👨‍💻 규상 님께</span> 서킷 화면은 <b>기구 번호 + 남은 시간</b>만. 기록은 <b>끝나고 한 번에</b> 넣게 해 주세요(중간 저장 없이).</p>
+        <p class="srcline">공식 — <a href="https://milongroup.com/en/circuit-training" target="_blank" rel="noopener">milongroup.com</a> · 운영 사례 <a href="https://www.fitnfun-ramstein.de/en/praevention.html" target="_blank" rel="noopener">Fit'n Fun Ramstein(§20 예방코스)</a></p>
+      </article>
+
+      <!-- ============ 9 The Exercise Coach ============ -->
+      <article class="svc" id="g-excoach">
+        <header class="svc-h">
+          <span class="svc-n">9</span>
+          <div>
+            <h3>The Exercise Coach <small>미국 · 20분 × 주 2회</small></h3>
+            <p class="svc-one"><b>20분, 주 2회, 코치 1명에 1~4명.</b> 기구 화면에 내 목표 곡선이 뜨고, 그걸 따라가면 끝나요. “짧고 확실한 약속”을 파는 곳이에요.</p>
+          </div>
+        </header>
+
+        <div class="gallery svc-gallery">
+          <figure class="shot tall">
+            <button class="pic" type="button" data-full="https://lh3.googleusercontent.com/d/1JTB1bp6pVn9_rhtR2qQFDmmlTMdNa-2c=w1600" data-cap="The Exercise Coach · 코치가 60대 회원의 기구 화면을 함께 보며 지도">
+              <img src="https://lh3.googleusercontent.com/d/1JTB1bp6pVn9_rhtR2qQFDmmlTMdNa-2c=w1200" alt="The Exercise Coach — 코치와 나이 든 회원이 기구 화면을 보며 운동" loading="lazy">
+            </button>
+            <figcaption class="cap"><span class="n">사진 1 · 20분 세션</span><b>짧아서 안 질린다</b><span>1~4명 소규모. 화면 속 목표 곡선을 따라가면 세트가 끝납니다.</span></figcaption>
+          </figure>
+        </div>
+        <p class="grab">📷 가져올 건 딱 하나 — <b>“20분·주 2회라는 고정 약속”</b>이에요. 시간이 정해지면 “오늘은 길게”가 사라집니다.</p>
+
+        <div class="svc-body">
+          <div class="box ok">
+            <b>✅ 이미 생각한 것과 비슷 — 그대로 가면 되는 것</b>
+            <ul>
+              <li><b>주 2회 · 짧은 세션</b>, 수치 피드백</li>
+              <li><b>무료 체험</b>으로 시작하기</li>
+            </ul>
+          </div>
+          <div class="box new">
+            <b>✨ 미처 생각 못 한 것 — 새로 빌려올 것</b>
+            <ul>
+              <li><b>무료 체험을 2회로</b>: 1회차 평가, 2회차 ‘내 곡선’ 체험 → 재방문 약속을 잡기 쉬워집니다.</li>
+              <li><b>“남의 시선 없음”을 상품 문구로</b>: 1~4명 소규모라는 사실을 대놓고 팔기.</li>
+              <li><b>스트레칭 20분 + 서킷 20분</b> 묶음 상품 — 우리 핵심역량(패시브 스트레칭)과 바로 붙습니다.</li>
+            </ul>
+          </div>
+        </div>
+        <p class="dev"><span class="who">👨‍💻 규상 님께</span> 예약 화면은 <b>‘20분’ 한 칸, ‘주 2회’ 두 칸</b>이면 돼요. 그 이상 옵션을 만들면 아무도 예약하지 않습니다.</p>
+        <p class="srcline">공식 — <a href="https://stronger.exercisecoach.com/strength-plus-river-oaks" target="_blank" rel="noopener">exercisecoach.com (지점)</a></p>
+      </article>
+
+      <!-- ============ 10 ActiveSG ============ -->
+      <article class="svc" id="g-activesg">
+        <header class="svc-h">
+          <span class="svc-n">10</span>
+          <div>
+            <h3>ActiveSG <small>싱가포르 · 공공 포인트</small></h3>
+            <p class="svc-one">나라가 주는 <b>운동 포인트</b>예요. 신규 회원에게 100달러어치를 주고 시설 예약에 쓰게 해요. <b>그해에 한 번만 써도 다음 해로 넘어가요.</b></p>
+          </div>
+        </header>
+
+        <div class="gallery svc-gallery">
+          <figure class="shot">
+            <button class="pic" type="button" data-full="https://lh3.googleusercontent.com/d/1kH4uRce54iZUdjzCW1YHRn6oqObMnNzc=w1600" data-cap="ActiveSG · 체육관에서 벽면 화면을 보며 함께 운동하는 시민들">
+              <img src="https://lh3.googleusercontent.com/d/1kH4uRce54iZUdjzCW1YHRn6oqObMnNzc=w1200" alt="ActiveSG 체육관에서 화면을 보며 운동하는 사람들" loading="lazy">
+            </button>
+            <figcaption class="cap"><span class="n">사진 1 · 공공 체육관</span><b>동네 시설이 곧 헬스장</b><span>프로그램을 예약해 쓰는 구조. 포인트로 결제합니다.</span></figcaption>
+          </figure>
+          <figure class="shot">
+            <button class="pic" type="button" data-full="https://lh3.googleusercontent.com/d/1ihplxjOA8POrtm66Qle4BDQHQc2G27ch=w1600" data-cap="ActiveSG · 공원 단체 걷기 프로그램 — 지역 주민이 함께 걷는 행사">
+              <img src="https://lh3.googleusercontent.com/d/1ihplxjOA8POrtm66Qle4BDQHQc2G27ch=w1200" alt="ActiveSG 단체 걷기 프로그램" loading="lazy">
+            </button>
+            <figcaption class="cap"><span class="n">사진 2 · 동네 프로그램</span><b>‘동네’가 단위</b><span>개인 운동이 아니라 동네 사람들과 함께하는 프로그램이 기본값.</span></figcaption>
+          </figure>
+        </div>
+        <p class="grab">📷 가져올 건 딱 하나 — <b>“안 쓴 포인트가 사라지지 않는 규칙”</b>이에요. 이월 한 줄이 휴면 회원을 다시 부릅니다.</p>
+
+        <div class="svc-body">
+          <div class="box ok">
+            <b>✅ 이미 생각한 것과 비슷 — 그대로 가면 되는 것</b>
+            <ul>
+              <li><b>포인트·리워드</b> 구조 — 우리 응원 토큰과 같은 결</li>
+              <li><b>지역 연계</b> 포지션</li>
+            </ul>
+          </div>
+          <div class="box new">
+            <b>✨ 미처 생각 못한 것 — 새로 빌려올 것</b>
+            <ul>
+              <li><b>롤오버</b>: 시즌 내 1회만 참여해도 누적 랭크·포인트가 다음 시즌으로 이월. 복귀 문턱이 낮아집니다.</li>
+              <li><b>지역 포인트 연동</b>: 지역화폐·지자체 포인트와 붙이면 “동네에서 쓰는 점수”가 됩니다(영동 연계 여부는 확인 과제).</li>
+              <li><b>사용 비율을 못 박기</b>: 시설 100%, 프로그램 30%처럼 정해 두면 예산이 새지 않습니다.</li>
+            </ul>
+          </div>
+        </div>
+        <p class="dev"><span class="who">👨‍💻 규상 님께</span> 포인트는 <b>‘만료 없음’ + ‘1회 사용하면 이월’</b> 규칙 두 줄이면 구현 끝이에요. 복잡한 계산 넣지 마세요.</p>
+        <p class="srcline">공식 — <a href="https://www.sportsingapore.gov.sg/media-centre/activesg-credits-now-available-for-booking-of-dual-use-scheme-facilities-across-singapore/" target="_blank" rel="noopener">Sport Singapore(크레딧)</a></p>
+      </article>
+
+      <!-- ============ 11 chocoZAP ============ -->
+      <article class="svc" id="g-chocozap">
+        <header class="svc-h">
+          <span class="svc-n">11</span>
+          <div>
+            <h3>chocoZAP <small>일본 · 초간편 무인 헬스장</small></h3>
+            <p class="svc-one">월 3,278엔, 입회금 0원. <b>앱 QR로 문을 열고</b> 24시간 혼자 운동해요. 대신 <b>사람이 없어요.</b></p>
+          </div>
+        </header>
+
+        <div class="gallery svc-gallery">
+          <figure class="shot">
+            <button class="pic" type="button" data-full="https://lh3.googleusercontent.com/d/1a0VRScuzwIftTWrTTQFfyrU_mur5gkbJ=w1600" data-cap="chocoZAP 앱 · 입장 QR — 문 앞에서 앱으로 바로 입장">
+              <img src="https://lh3.googleusercontent.com/d/1a0VRScuzwIftTWrTTQFfyrU_mur5gkbJ=w1200" alt="chocoZAP 앱 입장 QR 화면" loading="lazy">
+            </button>
+            <figcaption class="cap"><span class="n">사진 1 · QR 입장</span><b>앱이 곧 열쇠</b><span>카드도, 데스크도 없이 QR 하나로 입·퇴장.</span></figcaption>
+          </figure>
+          <figure class="shot">
+            <button class="pic" type="button" data-full="https://lh3.googleusercontent.com/d/18P2abvNXgSCb-uC3hBhQ9z4M_w66U7LU=w1600" data-cap="chocoZAP 앱 · 운동·체중 기록 — 체성분계와 연동된 변화 기록">
+              <img src="https://lh3.googleusercontent.com/d/18P2abvNXgSCb-uC3hBhQ9z4M_w66U7LU=w1200" alt="chocoZAP 앱 체중·체성분 기록 화면" loading="lazy">
+            </button>
+            <figcaption class="cap"><span class="n">사진 2 · 기록</span><b>숫자 2개만</b><span>몸무게와 체지방률. 변화만 보여 주고 조언은 없습니다.</span></figcaption>
+          </figure>
+        </div>
+        <p class="grab">📷 가져올 건 딱 하나 — <b>“앱 첫 화면이 QR”</b>이라는 원칙이에요. 기능 목록보다 입장이 먼저.</p>
+
+        <div class="svc-body">
+          <div class="box ok">
+            <b>✅ 이미 생각한 것과 비슷 — 그대로 가면 되는 것</b>
+            <ul>
+              <li><b>앱 간편화</b>, <b>진입장벽 제거</b></li>
+              <li><b>가격 단순화</b></li>
+            </ul>
+          </div>
+          <div class="box new">
+            <b>✨ 미처 생각 못 한 것 — 새로 빌려올 것</b>
+            <ul>
+              <li><b>기구마다 ‘1분 사용법’ 영상 QR</b>: 5060은 유튜브를 찾아보지 않습니다. 기구 옆 QR 하나로 끝내 주세요.</li>
+              <li><b>‘초기비용 0’을 상시 문구로</b>: 등록비 면제를 이벤트가 아니라 기본값으로.</li>
+              <li><b>가격 옵션 3개 이하</b>: 시니어에게 설명 비용이 가장 낮은 구조.</li>
+              <li><b>대비되는 점</b>: chocoZAP가 버린 것(사람·지도·체험)이 우리가 파는 것입니다. 경쟁이 아니라 대비.</li>
+            </ul>
+          </div>
+        </div>
+        <p class="dev"><span class="who">👨‍💻 규상 님께</span> QR 하나로 <b>입장 · 기구 영상 · 오늘 기록</b> 세 개만 연결해 주세요. 그 셋이면 충분합니다.</p>
+        <p class="srcline">공식 — <a href="https://chocozap.jp/" target="_blank" rel="noopener">chocozap.jp</a> · 앱 <a href="https://play.google.com/store/apps/details?id=jp.curves.jp.memberapp" target="_blank" rel="noopener">스토어 화면</a></p>
+      </article>
+
+      <!-- ============ 12 Planet Fitness ============ -->
+      <article class="svc" id="g-pf">
+        <header class="svc-h">
+          <span class="svc-n">12</span>
+          <div>
+            <h3>Planet Fitness <small>미국 · 초보자 친화 + 동반</small></h3>
+            <p class="svc-one">운동 초보가 편하게 오는 걸 목표로 만든 헬스장이에요. 상위 회원권은 <b>매번 친구 1명 무료 동반</b>, 앱에는 <b>“지금 몇 명 있음”</b>이 떠요.</p>
+          </div>
+        </header>
+
+        <div class="gallery svc-gallery">
+          <figure class="shot">
+            <button class="pic" type="button" data-full="https://lh3.googleusercontent.com/d/1LJKcv5fGMnHvaZdE6ZYbrKBNxbpQ8FlQ=w1600" data-cap="Planet Fitness · 넓은 유산소 존과 벽면 TV (공식 보도 이미지)">
+              <img src="https://lh3.googleusercontent.com/d/1LJKcv5fGMnHvaZdE6ZYbrKBNxbpQ8FlQ=w1200" alt="Planet Fitness 유산소 존 — 기구 줄과 TV" loading="lazy">
+            </button>
+            <figcaption class="cap"><span class="n">사진 1 · 매장</span><b>위압감 없게</b><span>무거운 바벨 존을 줄이고 유산소·서킷을 넓게. “처음 온 사람”이 기준입니다.</span></figcaption>
+          </figure>
+          <figure class="shot tall">
+            <button class="pic" type="button" data-full="https://lh3.googleusercontent.com/d/1uTpAJYWJ_qqtm7Lpm63f3SzLbHfj1fNW=w1600" data-cap="Planet Fitness 앱 · 블랙카드 혜택 — 전 지점 이용 · 게스트 무료 동반 · 스파 이용">
+              <img src="https://lh3.googleusercontent.com/d/1uTpAJYWJ_qqtm7Lpm63f3SzLbHfj1fNW=w1200" alt="Planet Fitness 앱 블랙카드 혜택 화면" loading="lazy">
+            </button>
+            <figcaption class="cap"><span class="n">사진 2 · 동반 혜택</span><b>쿠폰이 아니라 권리</b><span>“Bring a guest anytime!” — 상위 회원권의 상시 권리로 박혀 있습니다.</span></figcaption>
+          </figure>
+          <figure class="shot tall">
+            <button class="pic" type="button" data-full="https://lh3.googleusercontent.com/d/1D8Xuxnz_M0qXCrsIoukLZXQ73a911ITy=w1600" data-cap="Planet Fitness 앱 · Crowd Meter — 지금 매장이 얼마나 붐비는지 실시간 표시">
+              <img src="https://lh3.googleusercontent.com/d/1D8Xuxnz_M0qXCrsIoukLZXQ73a911ITy=w1200" alt="Planet Fitness 앱 혼잡도 표시 화면" loading="lazy">
+            </button>
+            <figcaption class="cap"><span class="n">사진 3 · 혼잡도</span><b>가기 전에 확인</b><span>지금 몇 명 있는지 미리 보고 시간을 고릅니다.</span></figcaption>
+          </figure>
+        </div>
+        <p class="grab">📷 가져올 건 딱 하나 — <b>“혼잡도 숫자 하나”</b>예요. 5060은 붐비는 시간을 가장 피하고 싶어 합니다.</p>
+
+        <div class="svc-body">
+          <div class="box ok">
+            <b>✅ 이미 생각한 것과 비슷 — 그대로 가면 되는 것</b>
+            <ul>
+              <li><b>초보자 친화 분위기</b> — 우리 5060 톤</li>
+              <li><b>동반·추천을 상시 권리로</b> — 우리 Top 5의 5번</li>
+            </ul>
+          </div>
+          <div class="box new">
+            <b>✨ 미처 생각 못 한 것 — 새로 빌려올 것</b>
+            <ul>
+              <li><b>혼잡도 미터</b>: 앱에 “지금 12명” 한 줄. 계산 없이 입장 인원만 세면 됩니다.</li>
+              <li><b>“매 방문 동반 1명”</b>을 상위 회원권의 기본값으로(우리는 월 2회). 추천 보상은 현금 대신 기간 연장.</li>
+              <li><b>이름 하나로 브랜드 설명 끝내기</b>: “심사 없는 존(Judgement Free Zone)”처럼 우리도 한 문장을 정해 두기.</li>
+            </ul>
+          </div>
+        </div>
+        <p class="dev"><span class="who">👨‍💻 규상 님께</span> 혼잡도는 <b>‘지금 입장 인원’ 한 숫자</b>만. 예측·그래프 없이 세기만 하면 돼요. 화면엔 “지금 12명 · 조용해요” 정도.</p>
+        <p class="srcline">공식 — <a href="https://www.planetfitness.com/our-clubs" target="_blank" rel="noopener">planetfitness.com</a> · <a href="https://www.planetfitness.com/gyms/wayne-mi" target="_blank" rel="noopener">지점 안내(게스트 동반)</a></p>
+      </article>
+
+      <!-- ============ summary ============ -->
+      <h3 class="grp">그래서 우리는 이 순서로 갑니다 (Top 5)</h3>
+      <table>
+        <thead><tr><th>순위</th><th>적용안</th><th>가져온 곳</th><th>왜 이게 먼저인가</th></tr></thead>
+        <tbody>
+          <tr><td><b>1</b></td><td>CP를 ‘절대 칼로리’ → <b>‘목표 근접도 + 상한 캡’</b></td><td>Myzone · F45</td><td>기기 투자 0원. 규칙만 바꾸면 내일부터 됩니다. 50대와 60대가 같은 기준으로 겨룹니다.</td></tr>
+          <tr><td><b>2</b></td><td><b>연속 개월 랭크</b>를 TV에 상시 게시</td><td>Myzone Status</td><td>시즌이 끝나도 사라지지 않는 자산 → 재등록 이유가 됩니다. 저장할 값 하나.</td></tr>
+          <tr><td><b>3</b></td><td>입회·6주·12주 <b>‘몸 나이’ 평가 루프</b></td><td>EGYM · Club Active · Gym Tonic</td><td>결과지 한 장이 ‘게임’을 ‘건강관리’로 바꿔 지불 저항을 낮춥니다.</td></tr>
+          <tr><td><b>4</b></td><td><b>리더보드 3분할</b> + 월간 리셋 + 비공개 선택</td><td>F45 · EGYM</td><td>50명 전원이 어딘가에 이름을 올립니다. 꼴찌가 노출되지 않습니다.</td></tr>
+          <tr><td><b>5</b></td><td><b>동반·추천을 상시 권리로</b></td><td>Planet Fitness · Orangetheory</td><td>농촌은 지인 추천이 주 채널. 쿠폰 남발 없이 회원권 등급으로 해결.</td></tr>
+        </tbody>
+      </table>
+
+      <div class="callout" id="g-dev3">
+        <span class="t">규상 님께 — 이번 주에 만들 화면은 딱 3개입니다</span>
+        <b>① TV 타일 화면</b>(이름 · 점수 · 목표) → <b>② 앱 첫 화면</b>(QR 입장 + 오늘 점수) → <b>③ 시즌 결과지 1장</b>(PDF: 시작·끝 3항목).
+        나머지(심박 자동 연동, 자동 세팅, 혼잡도 그래프)는 회원이 30명을 넘긴 뒤에 붙이면 늦지 않습니다.
+        지금 단계에서 가장 비싼 실수는 <b>기능을 많이 넣는 것</b>이에요. 화면 하나에 숫자 3개, 그게 이 12곳이 공통으로 가르쳐 준 전부입니다.
+      </div>
+
+      <div class="callout warn">
+        <span class="t">그대로 베끼지 않을 것</span>
+        실시간 심박·존 색을 그대로 쓰면 5060에게 “빨리 뛰어야 한다”는 신호가 됩니다. <b>존 5를 색으로 띄우지 않고 ‘목표 90~110% 근접’을 강조색</b>으로 쓰는 게 안전합니다.
+        가슴 심박밴드·대형 LED·자동 세팅 기구는 <b>비용이 드는 부분</b>이니, 1호점은 TV 2대 + 수기 입력으로 시작하는 순서가 맞습니다.
+      </div>
+
+      <p class="srcline">사진 출처 — 각 브랜드 공식 사이트·공식 보도자료·앱스토어 공개 화면(2026-11-22 확인). 학습·비교 목적으로만 사용하며 브랜드와 제휴 관계는 없습니다. 원본 파일 — <a href="https://drive.google.com/drive/folders/166cHygfXkCvneWFhSpwaU9OKigdHcGba" target="_blank" rel="noopener">드라이브 폴더 ‘칼로리그_레퍼런스’</a> · 12곳 전체 상세 — <a href="https://muse.ai/s/haeoe-geimhwa-sinieo-piteuniseu-sarye-xgxk6xrexoxvf90xe/mBriNqJrU9vHRO47wRDsZzMiaJwl7d4ZtVzV4hbL1IA" target="_blank" rel="noopener">뮤즈 리포트</a></p>
     </section>
 
     <!-- 6 -->
