@@ -279,15 +279,16 @@
     margin:12px 0 4px;font-size:.92em;color:#0d5f57;background:var(--mint-soft);
     border:1px solid #c6ece5;border-radius:12px;padding:11px 14px;
   }
-  .svc-body{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:12px 0 8px}
+  .svc-body{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:12px 0 8px;align-items:start}
   .box{border-radius:14px;padding:13px 15px;font-size:.93em;border:1px solid}
-  .box b{display:block;margin-bottom:6px;font-size:.95em}
+  .box b{color:inherit}
+  .box > b{display:block;margin-bottom:6px;font-size:.95em}
   .box ul{margin:0;padding-left:18px}
   .box li{margin:0 0 6px;line-height:1.6}
   .box.ok{background:#f2f8ff;border-color:#d5e4fb;color:#1c3a6e}
-  .box.ok b{color:#17408f}
+  .box.ok > b{color:#17408f}
   .box.new{background:#fffaf0;border-color:#f6e3bf;color:#6b4708}
-  .box.new b{color:#7a4a09}
+  .box.new > b{color:#7a4a09}
   .dev{
     margin:10px 0 6px;font-size:.92em;color:var(--ink-2);
     border-left:3px solid #b9c6e4;padding:2px 0 2px 12px;
@@ -385,7 +386,7 @@
     <h1>칼로리그 <span>아이디어 8가지</span></h1>
     <p class="lead">
       큰 글씨 기본 화면 + 매장 TV 현황판 + 실시간 점수·랭크 게임화 + “절대 기록 대신 목표 근접도”.
-      여기에 코엑스 엑스포에서 직접 본 <b>핏큘레이터(운동량 점수)</b>와 <b>츄룹(링크 하나로 모임 운영)</b>을 더했습니다. 아래 카드에서 항목별로 확인하세요.
+      여기에 코엑스 엑스포에서 직접 본 <b>핏큘레이터(운동량 점수)</b>와 <b>츄룹(링크 하나로 모임 운영)</b>, 그리고 <b>해외 12곳 + Entrance의 실제 화면 사진 27장</b>을 더했습니다. 아래 카드에서 항목별로 확인하세요.
     </p>
     <ul class="chips">
       <li><i>🔠</i>큰 글씨가 기본</li>
@@ -394,6 +395,7 @@
       <li><i>🎯</i>목표 근접도 점수</li>
       <li><i>🏟️</i>핏큘레이터 · 츄룹</li>
       <li><i>📷</i>현장 사진 14장</li>
+      <li><i>🌍</i>해외 12곳 + Entrance 사진 27장</li>
     </ul>
   </header>
 
@@ -1462,6 +1464,29 @@
           </div>
         </div>
       </div>
+
+      <h3>⑤ 한눈에 — ✅ 이미 생각한 것 / ✨ 새로 차용할 것</h3>
+      <div class="svc-body">
+        <div class="box ok">
+          <b>✅ 이미 생각한 것과 비슷 — 그대로 가면 되는 것</b>
+          <ul>
+            <li><b>운동을 ‘기록’이 아니라 ‘점수’로</b> — 우리 CP와 같은 발상(핏큘레이터 pt)</li>
+            <li><b>TV 전광판 2분할</b>(왼쪽 내용·오른쪽 사람) — 우리 ③ 현황판과 같음</li>
+            <li><b>모임은 앱 설치 없이 링크 하나로</b> — 5060 이탈을 줄이는 방식</li>
+            <li><b>워치 기종 상관없이 한 점수</b> — 가민·애플·갤럭시 통합</li>
+          </ul>
+        </div>
+        <div class="box new">
+          <b>✨ 미처 생각 못 한 것 — 새로 빌려올 것</b>
+          <ul>
+            <li><b>‘적정’을 먼저 말해 주기</b>: 이번 주를 <b>최근 4주 평균</b>과 비교해 “적정 / 부족 / 과훈련”을 먼저 알려 줌. 5060에게 “더”보다 “적정”이 오래 갑니다.</li>
+            <li><b>대회를 열어 앱을 체험시키기</b>: 기능 설명 대신 2인 1팀 클래스를 열고 기록·전광판은 앱이 처리(“BURN, BUT FUN.”).</li>
+            <li><b>강조색은 ‘높은 존’이 아니라 ‘목표 근접’</b>: 존 5를 띄우지 않고 90~110% 근접을 색으로.</li>
+            <li><b>사진 자동 분류</b>: 모임이 끝나면 참석자별로 사진이 모임 — 단톡방 저장기한 문제 해결.</li>
+          </ul>
+        </div>
+      </div>
+      <p class="dev"><span class="who">👨‍💻 규상 님께</span> 전광판은 <b>왼쪽(무엇을 하는가) / 오른쪽(누가 얼마나) 2칸</b>이면 끝이에요. 화면에 ‘목표 근접’만 색으로 칠하고, 개인 카드는 <b>이름 · 큰 숫자 · 작은 숫자</b> 3개로 제한해 주세요.</p>
 
       <div class="callout warn">
         <span class="t">그대로 사면 안 되는 것</span>
