@@ -85,7 +85,7 @@ h3.lead:first-of-type{margin-top:6px}
 
 /* chips */
 .chips{display:flex;gap:7px;flex-wrap:wrap;margin:0 0 14px}
-.chip{appearance:none;border:1px solid var(--line);background:#fff;color:var(--ink2);font:inherit;font-size:13px;font-weight:600;padding:7px 13px;border-radius:999px;cursor:pointer;transition:.15s}
+.chip{appearance:none;border:1px solid var(--line);background:#fff;color:var(--ink2);font:inherit;font-size:13px;font-weight:600;padding:7px 13px;border-radius:999px;cursor:pointer;transition:.15s;white-space:nowrap}
 .chip:hover{border-color:#cbd5e1}
 .chip[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
 .chip:focus-visible{outline:2px solid var(--accent2);outline-offset:2px}
@@ -99,11 +99,13 @@ th,td{text-align:left;vertical-align:top;padding:11px 13px;border-bottom:1px sol
 thead th{background:#f8fafc;font-size:12px;letter-spacing:.02em;color:var(--ink2);font-weight:750;white-space:nowrap;position:sticky;top:0}
 tbody tr:last-child td{border-bottom:0}
 tbody tr:hover{background:#fbfcfd}
-td.name{min-width:150px}
-td.name .nm{font-weight:750;letter-spacing:-0.02em}
-td.name .sl{display:block;font-size:11.5px;color:var(--muted);margin-top:1px}
-.thumb{width:52px;height:40px;border-radius:8px;object-fit:cover;border:1px solid var(--line);background:#f1f5f9;float:left;margin:0 9px 0 0}
-.thumb--none{display:grid;place-items:center;font-size:9.5px;font-weight:700;color:#9aa8b8;text-align:center;line-height:1.2}
+td.name{min-width:168px}
+.nwrap{display:flex;align-items:center;gap:9px}
+.ntext{min-width:0}
+td.name .nm{display:block;font-weight:750;letter-spacing:-0.02em}
+td.name .sl{display:block;font-size:11.5px;color:var(--muted);margin-top:1px;line-height:1.35}
+.thumb{flex:0 0 auto;width:52px;height:40px;border-radius:8px;object-fit:cover;border:1px solid var(--line);background:#f1f5f9}
+.thumb--none{display:grid;place-items:center;font-size:9px;font-weight:700;color:#9aa8b8;text-align:center;line-height:1.15;letter-spacing:-0.02em}
 .num{font-variant-numeric:tabular-nums;white-space:nowrap}
 .badge{display:inline-block;font-size:11px;font-weight:750;padding:2px 7px;border-radius:6px;white-space:nowrap}
 .b0{background:#f1f5f9;color:#64748b}
@@ -124,7 +126,7 @@ tr.hide{display:none}
   td.name::before{display:none}
   td.verdict{text-align:left;display:block}
   td.verdict::before{display:block;margin-bottom:2px}
-  .thumb{width:76px;height:58px}
+  .thumb{width:64px;height:48px}
 }
 
 /* note / footnote */
@@ -238,7 +240,7 @@ tr.hide{display:none}
 <!-- ② 비교 -->
 <section class="panel" id="cmp" role="tabpanel" aria-labelledby="tab-cmp">
   <div class="wrap">
-    <h2><span class="num">②</span>후보 7종 한눈에</h2>
+    <h2><span class="num">②</span> 후보 7종 한눈에</h2>
     <p class="sec-sub">전부 Jinshunze·KoBelle·XinSheng·Timber Haven의 알리익스프레스 리스팅입니다. 판매량·후기 수는 <b>해당 리스팅 기준</b>이며 스토어 누적 판매와 다릅니다.</p>
 
     <div class="chips" role="group" aria-label="필터">
@@ -260,7 +262,7 @@ tr.hide{display:none}
           </thead>
           <tbody>
             <tr data-review="0" data-heat="n" data-dual="?" data-load="y">
-              <td class="name"><span class="thumb thumb--none">사진<br>없음</span><span class="nm">SBC-100</span><span class="sl">Jinshunze · 1005012969897315</span></td>
+              <td class="name"><div class="nwrap"><span class="thumb thumb--none">사진<br>없음</span><div class="ntext"><span class="nm">SBC-100</span><span class="sl">Jinshunze · 1005012969897315</span></div></div></td>
               <td data-th="판매량" class="num">0개</td>
               <td data-th="후기"><span class="badge b0">0건</span></td>
               <td data-th="스토어" class="num">100.0%<br><span class="na">팔로워 128</span></td>
@@ -269,7 +271,7 @@ tr.hide{display:none}
               <td class="verdict" data-th="판정">최저가(DDP ≈188만)지만 <b>온열 없음</b>. 판매 0건이라 우리가 첫 구매자가 됩니다.</td>
             </tr>
             <tr data-review="1" data-heat="?" data-dual="y" data-load="y">
-              <td class="name"><img class="thumb" src="img/sbc-97.jpg" alt="SBC-97" loading="lazy"><span class="nm">SBC-97</span><span class="sl">Jinshunze · 1005012340321332</span></td>
+              <td class="name"><div class="nwrap"><img class="thumb" src="img/sbc-97.jpg" alt="" loading="lazy"><div class="ntext"><span class="nm">SBC-97</span><span class="sl">Jinshunze · 1005012340321332</span></div></div></td>
               <td data-th="판매량" class="num">3개</td>
               <td data-th="후기"><span class="badge b-warn">1건 (5.0)</span></td>
               <td data-th="스토어" class="num">100.0%<br><span class="na">팔로워 128</span></td>
@@ -278,7 +280,7 @@ tr.hide{display:none}
               <td class="verdict" data-th="판정">하중 150kg·지지대 2개. 후기 1건은 신뢰도 약. 온열 표기가 불명확합니다.</td>
             </tr>
             <tr data-review="0" data-heat="y" data-dual="?" data-load="y">
-              <td class="name"><span class="thumb thumb--none">사진<br>없음</span><span class="nm">SBC-23</span><span class="sl">Jinshunze · 1005013086905329</span></td>
+              <td class="name"><div class="nwrap"><span class="thumb thumb--none">사진<br>없음</span><div class="ntext"><span class="nm">SBC-23</span><span class="sl">Jinshunze · 1005013086905329</span></div></div></td>
               <td data-th="판매량" class="num">1개</td>
               <td data-th="후기"><span class="badge b0">0건</span></td>
               <td data-th="스토어" class="num">100.0%<br><span class="na">팔로워 128</span></td>
@@ -287,7 +289,7 @@ tr.hide{display:none}
               <td class="verdict" data-th="판정">온열은 있지만 <b>20~35°C</b>로 약하고 7종 중 최고가입니다.</td>
             </tr>
             <tr data-review="1" data-heat="y" data-dual="y" data-load="?">
-              <td class="name"><img class="thumb" src="img/sbc-89.jpg" alt="SBC-89" loading="lazy"><span class="nm">SBC-89</span><span class="sl">Jinshunze · 1005012343820925</span></td>
+              <td class="name"><div class="nwrap"><img class="thumb" src="img/sbc-89.jpg" alt="" loading="lazy"><div class="ntext"><span class="nm">SBC-89</span><span class="sl">Jinshunze · 1005012343820925</span></div></div></td>
               <td data-th="판매량" class="num">11개 <span class="na">최다</span></td>
               <td data-th="후기"><span class="badge b-warn">1건 (5.0)</span></td>
               <td data-th="스토어" class="num">100.0%<br><span class="na">팔로워 128</span></td>
@@ -296,7 +298,7 @@ tr.hide{display:none}
               <td class="verdict" data-th="판정">전신 온열 + 지지대 2개(골든 베이스). 다만 <b>하중 수치가 페이지에 없습니다.</b></td>
             </tr>
             <tr data-review="0" data-heat="y" data-dual="y" data-load="n">
-              <td class="name"><img class="thumb" src="img/kobelle.jpg" alt="KoBelle 플래티넘 4모터" loading="lazy"><span class="nm">KoBelle 플래티넘</span><span class="sl">1005012345227850</span></td>
+              <td class="name"><div class="nwrap"><img class="thumb" src="img/kobelle.jpg" alt="" loading="lazy"><div class="ntext"><span class="nm">KoBelle 플래티넘</span><span class="sl">1005012345227850</span></div></div></td>
               <td data-th="판매량" class="num na">표시 없음</td>
               <td data-th="후기"><span class="badge b0">0건</span></td>
               <td data-th="스토어" class="num na">하트 4</td>
@@ -305,7 +307,7 @@ tr.hide{display:none}
               <td class="verdict" data-th="판정"><b>판매자 답변 최대 하중 약 100kg</b> — 130kg 조건 미달로 후보에서 제외.</td>
             </tr>
             <tr data-review="0" data-heat="?" data-dual="?" data-load="?">
-              <td class="name"><span class="thumb thumb--none">사진<br>없음</span><span class="nm">XinSheng 2026년형</span><span class="sl">1005012984661513</span></td>
+              <td class="name"><div class="nwrap"><span class="thumb thumb--none">사진<br>없음</span><div class="ntext"><span class="nm">XinSheng 2026년형</span><span class="sl">1005012984661513</span></div></div></td>
               <td data-th="판매량" class="num">6개</td>
               <td data-th="후기"><span class="badge b0">0건</span></td>
               <td data-th="스토어" class="num"><span class="badge b-bad">80.0%</span><br><span class="na">팔로워 580</span></td>
@@ -314,7 +316,7 @@ tr.hide{display:none}
               <td class="verdict" data-th="판정">스토어 긍정률이 80.0%로 유일하게 낮고, 6개 문항에 <b>회신이 없습니다.</b></td>
             </tr>
             <tr data-review="0" data-heat="?" data-dual="?" data-load="?">
-              <td class="name"><span class="thumb thumb--none">사진<br>없음</span><span class="nm">Timber Haven</span><span class="sl">1005012796182632</span></td>
+              <td class="name"><div class="nwrap"><span class="thumb thumb--none">사진<br>없음</span><div class="ntext"><span class="nm">Timber Haven</span><span class="sl">1005012796182632</span></div></div></td>
               <td data-th="판매량" class="num na">표시 없음</td>
               <td data-th="후기"><span class="badge b0">0건</span></td>
               <td data-th="스토어" class="num">4.6<br><span class="na">11/20 · 누적 122</span></td>
@@ -365,7 +367,7 @@ tr.hide{display:none}
 <!-- ③ 후기 -->
 <section class="panel" id="rev" role="tabpanel" aria-labelledby="tab-rev">
   <div class="wrap">
-    <h2><span class="num">③</span>확인된 후기 원문</h2>
+    <h2><span class="num">③</span> 확인된 후기 원문</h2>
     <p class="sec-sub">후기가 있는 리스팅은 2건뿐이었고, 그보다 값진 것은 <b>같은 OEM 계열</b>에 남은 미국 메디스파의 후기 1건이었습니다. 없는 후기는 만들지 않았습니다.</p>
 
     <div class="rev">
@@ -437,7 +439,7 @@ tr.hide{display:none}
 <!-- ④ 문의 문구 -->
 <section class="panel" id="ask" role="tabpanel" aria-labelledby="tab-ask">
   <div class="wrap">
-    <h2><span class="num">④</span>판매자 확인용 문구</h2>
+    <h2><span class="num">④</span> 판매자 확인용 문구</h2>
     <p class="sec-sub">알리 채팅에 그대로 붙여넣으세요. 영문으로 보내면 통역을 거치지 않아 오해가 적습니다.</p>
     <p style="margin:-6px 0 16px"><button class="btn btn--all" data-copy-all>전체 복사하기 (5개)</button></p>
 
@@ -522,7 +524,7 @@ If you cannot guarantee this, please tell me now, because I will not place the o
 <!-- ⑤ 고장 -->
 <section class="panel" id="fix" role="tabpanel" aria-labelledby="tab-fix">
   <div class="wrap">
-    <h2><span class="num">⑤</span>후기가 없으니 대신 본 고장 구조</h2>
+    <h2><span class="num">⑤</span> 후기가 없으니 대신 본 고장 구조</h2>
     <p class="sec-sub">미국 스파 장비 서비스 업체(Nova·Kangmei)의 수리 자료로 확인한 내용입니다. 직수입 베드에서 실제로 무엇이 먼저 고장 나는지입니다.</p>
 
     <div class="grid grid--3">
