@@ -20,7 +20,7 @@
   --maxw:1080px;
 }
 *{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%; scroll-behavior:smooth}
+html{-webkit-text-size-adjust:100%; scroll-behavior:smooth; scroll-padding-top:62px}
 body{
   margin:0; background:var(--bg); color:var(--ink);
   font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR","Segoe UI",Roboto,sans-serif;
@@ -53,7 +53,7 @@ a{color:var(--accent)}
 .tab:focus-visible{outline:2px solid var(--accent2);outline-offset:2px}
 
 /* panels */
-.panel{display:none;padding:28px 0 64px}
+.panel{display:none;padding:28px 0 64px;scroll-margin-top:62px}
 .panel.is-active{display:block}
 h2{font-size:clamp(19px,3.8vw,26px);line-height:1.3;margin:0 0 6px;letter-spacing:-0.03em}
 h2 .num{color:var(--accent2);margin-right:6px}
@@ -599,8 +599,13 @@ If you cannot guarantee this, please tell me now, because I will not place the o
       n.focus(); select(n.getAttribute('aria-controls'), true);
     });
   });
-  var h = location.hash.replace('#','');
-  if(h && document.getElementById(h) && document.getElementById(h).classList.contains('panel')) select(h,false);
+  function fromHash(){
+    var h = location.hash.replace('#','');
+    var el = h && document.getElementById(h);
+    if(el && el.classList.contains('panel')) select(h,false);
+  }
+  fromHash();
+  window.addEventListener('hashchange', fromHash);
 
   // filters
   var chips = Array.prototype.slice.call(document.querySelectorAll('.chip'));
